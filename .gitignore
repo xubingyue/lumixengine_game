@@ -32,3 +32,5 @@
 *.app
 error.log
 imgui.ini
+metadata.bin
+studio.ini
