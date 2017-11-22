@@ -34,3 +34,5 @@ error.log
 imgui.ini
 metadata.bin
 studio.ini
+pipelines/compiled
+.lumix/
