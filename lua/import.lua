@@ -14,6 +14,11 @@ function importModel(filename, out_dir)
 		output_dir = out_dir,
 		scale = 1.0,
 	})
+	
+	for i = 0, ImportAsset.getMeshesCount() - 1 do	
+		ImportAsset.setMeshParams(i, {import_physics = true})
+	end
+	
 	for i = 0, ImportAsset.getMaterialsCount() - 1 do
 		local args = {import = true, alpha_cutout = false}
 		local name = ImportAsset.getMaterialName(i)
