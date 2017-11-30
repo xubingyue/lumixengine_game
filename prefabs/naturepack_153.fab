@@ -1,0 +1,32 @@
+#version
+	2
+#entity_count
+	1
+#prefab
+	513847636
+#parent
+	18446744073709551615
+#renderable
+	1512583253
+#scene_version
+	8
+#source
+	"models/environment/naturepack_153.msh"
+#flags
+	0
+#custom_materials
+	0
+#mesh_rigid_actor
+	1567933814
+#scene_version
+	3
+#layer
+	0
+#dynamic_type
+	0
+#trigger
+	0
+#source
+	"models/environment/naturepack_153.phy"
+#cmp_end
+	0
