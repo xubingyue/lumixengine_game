@@ -30,6 +30,11 @@ public class Player : Lumix.Component
             m_Yaw -= k.x * m_RotationSpeed;
             m_Pitch -= k.y * m_RotationSpeed;
         }
+        else if(v is MouseButtonInputEvent)
+        {
+            var k = v as MouseButtonInputEvent;
+            if (k.is_down) Shoot();
+        }
     }
 
 
@@ -43,6 +48,17 @@ public class Player : Lumix.Component
         m_IsKeyDown['d'] = false;
         m_PhysicalController= GetComponent<PhysicalController>();
     }
+
+
+    private void Shoot()
+    {
+        var scene = Universe.GetScene<PhysicsScene>();
+        Vec3 origin = Vec3.Zero;
+        Vec3 dir = Vec3.Forward;
+        Entity hit = scene.Raycast(origin, dir, entity);
+        // TODO
+    }
+
 
     private void Move(Vec3 dir_local)
     {

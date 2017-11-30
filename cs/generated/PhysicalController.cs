@@ -7,9 +7,6 @@ namespace Lumix
 	[NativeComponent(Type = "physical_controller")]
 	public class PhysicalController : Component
 	{
-		public PhysicalController(Entity _entity)
-			: base(_entity, 0, IntPtr.Zero) { }
-
 		public PhysicalController(Entity _entity, int _cmpId)
 			: base(_entity, _cmpId, getScene(_entity.instance_, "physical_controller" )) { }
 
