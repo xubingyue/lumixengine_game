@@ -1,0 +1,395 @@
+#count
+	11
+#resource
+	"prefabs/naturepack_030.fab"
+#resource
+	"prefabs/naturepack_001.fab"
+#resource
+	"prefabs/naturepack_126.fab"
+#resource
+	"prefabs/naturepack_004.fab"
+#resource
+	"prefabs/naturepack_148.fab"
+#resource
+	"prefabs/naturepack_154.fab"
+#resource
+	"prefabs/naturepack_027.fab"
+#resource
+	"prefabs/naturepack_085.fab"
+#resource
+	"prefabs/naturepack_049.fab"
+#resource
+	"prefabs/naturepack_026.fab"
+#resource
+	"prefabs/naturepack_044.fab"
+#resource
+	"prefabs/naturepack_135.fab"
+#resource
+	"prefabs/naturepack_139.fab"
+#resource
+	"prefabs/naturepack_088.fab"
+#resource
+	"prefabs/naturepack_056.fab"
+#resource
+	"prefabs/naturepack_142.fab"
+#resource
+	"prefabs/naturepack_118.fab"
+#resource
+	"prefabs/naturepack_033.fab"
+#resource
+	"prefabs/naturepack_034.fab"
+#resource
+	"prefabs/naturepack_061.fab"
+#resource
+	"prefabs/naturepack_007.fab"
+#resource
+	"prefabs/naturepack_170.fab"
+#resource
+	"prefabs/naturepack_flat_001.fab"
+#resource
+	"prefabs/naturepack_084.fab"
+#resource
+	"prefabs/naturepack_flat_010.fab"
+#resource
+	"prefabs/naturepack_072.fab"
+#resource
+	"prefabs/naturepack_062.fab"
+#resource
+	"prefabs/naturepack_129.fab"
+#resource
+	"prefabs/naturepack_045.fab"
+#resource
+	"prefabs/naturepack_164.fab"
+#resource
+	"prefabs/naturepack_167.fab"
+#resource
+	"prefabs/naturepack_flat_013.fab"
+#resource
+	"prefabs/naturepack_018.fab"
+#resource
+	"prefabs/naturepack_036.fab"
+#resource
+	"prefabs/naturepack_092.fab"
+#resource
+	"prefabs/naturepack_065.fab"
+#resource
+	"prefabs/naturepack_011.fab"
+#resource
+	"prefabs/naturepack_133.fab"
+#resource
+	"prefabs/naturepack_140.fab"
+#resource
+	"prefabs/naturepack_050.fab"
+#resource
+	"prefabs/naturepack_159.fab"
+#resource
+	"prefabs/naturepack_039.fab"
+#resource
+	"prefabs/naturepack_149.fab"
+#resource
+	"prefabs/naturepack_066.fab"
+#resource
+	"prefabs/naturepack_042.fab"
+#resource
+	"prefabs/naturepack_016.fab"
+#resource
+	"prefabs/naturepack_099.fab"
+#resource
+	"prefabs/naturepack_128.fab"
+#resource
+	"prefabs/naturepack_150.fab"
+#resource
+	"prefabs/naturepack_165.fab"
+#resource
+	"prefabs/naturepack_109.fab"
+#resource
+	"prefabs/naturepack_093.fab"
+#resource
+	"prefabs/naturepack_047.fab"
+#resource
+	"prefabs/naturepack_125.fab"
+#resource
+	"prefabs/naturepack_010.fab"
+#resource
+	"prefabs/naturepack_074.fab"
+#resource
+	"prefabs/naturepack_141.fab"
+#resource
+	"prefabs/naturepack_057.fab"
+#resource
+	"prefabs/naturepack_136.fab"
+#resource
+	"prefabs/naturepack_054.fab"
+#resource
+	"prefabs/naturepack_012.fab"
+#resource
+	"prefabs/naturepack_006.fab"
+#resource
+	"prefabs/naturepack_127.fab"
+#resource
+	"prefabs/naturepack_156.fab"
+#resource
+	"prefabs/naturepack_064.fab"
+#resource
+	"prefabs/naturepack_flat_004.fab"
+#resource
+	"prefabs/naturepack_087.fab"
+#resource
+	"prefabs/naturepack_flat_011.fab"
+#resource
+	"prefabs/naturepack_122.fab"
+#resource
+	"prefabs/naturepack_106.fab"
+#resource
+	"prefabs/naturepack_145.fab"
+#resource
+	"prefabs/naturepack_111.fab"
+#resource
+	"prefabs/naturepack_100.fab"
+#resource
+	"prefabs/naturepack_002.fab"
+#resource
+	"prefabs/naturepack_flat_009.fab"
+#resource
+	"prefabs/naturepack_090.fab"
+#resource
+	"prefabs/naturepack_119.fab"
+#resource
+	"prefabs/naturepack_174.fab"
+#resource
+	"prefabs/naturepack_025.fab"
+#resource
+	"prefabs/naturepack_071.fab"
+#resource
+	"prefabs/naturepack_076.fab"
+#resource
+	"prefabs/naturepack_031.fab"
+#resource
+	"prefabs/naturepack_040.fab"
+#resource
+	"prefabs/naturepack_097.fab"
+#resource
+	"prefabs/naturepack_003.fab"
+#resource
+	"prefabs/naturepack_169.fab"
+#resource
+	"prefabs/naturepack_flat_006.fab"
+#resource
+	"prefabs/naturepack_008.fab"
+#resource
+	"prefabs/naturepack_098.fab"
+#resource
+	"prefabs/naturepack_flat_005.fab"
+#resource
+	"prefabs/naturepack_020.fab"
+#resource
+	"prefabs/naturepack_144.fab"
+#resource
+	"prefabs/naturepack_153.fab"
+#resource
+	"prefabs/naturepack_flat_007.fab"
+#resource
+	"prefabs/naturepack_108.fab"
+#resource
+	"prefabs/naturepack_022.fab"
+#resource
+	"prefabs/naturepack_059.fab"
+#resource
+	"prefabs/naturepack_172.fab"
+#resource
+	"prefabs/naturepack_077.fab"
+#resource
+	"prefabs/naturepack_131.fab"
+#resource
+	"prefabs/naturepack_103.fab"
+#resource
+	"prefabs/naturepack_067.fab"
+#resource
+	"prefabs/naturepack_160.fab"
+#resource
+	"prefabs/naturepack_105.fab"
+#resource
+	"prefabs/naturepack_110.fab"
+#resource
+	"prefabs/naturepack_116.fab"
+#resource
+	"prefabs/naturepack_104.fab"
+#resource
+	"prefabs/naturepack_013.fab"
+#resource
+	"prefabs/naturepack_058.fab"
+#resource
+	"prefabs/naturepack_113.fab"
+#resource
+	"prefabs/naturepack_134.fab"
+#resource
+	"prefabs/naturepack_173.fab"
+#resource
+	"prefabs/naturepack_082.fab"
+#resource
+	"prefabs/naturepack_flat_012.fab"
+#resource
+	"prefabs/naturepack_147.fab"
+#resource
+	"prefabs/naturepack_114.fab"
+#resource
+	"prefabs/naturepack_124.fab"
+#resource
+	"prefabs/naturepack_161.fab"
+#resource
+	"prefabs/naturepack_019.fab"
+#resource
+	"prefabs/naturepack_123.fab"
+#resource
+	"prefabs/naturepack_168.fab"
+#resource
+	"prefabs/naturepack_152.fab"
+#resource
+	"prefabs/naturepack_032.fab"
+#resource
+	"prefabs/naturepack_117.fab"
+#resource
+	"prefabs/naturepack_081.fab"
+#resource
+	"prefabs/naturepack_130.fab"
+#resource
+	"prefabs/naturepack_flat_008.fab"
+#resource
+	"prefabs/naturepack_flat_002.fab"
+#resource
+	"prefabs/naturepack_043.fab"
+#resource
+	"prefabs/naturepack_048.fab"
+#resource
+	"prefabs/naturepack_112.fab"
+#resource
+	"prefabs/naturepack_014.fab"
+#resource
+	"prefabs/naturepack_009.fab"
+#resource
+	"prefabs/naturepack_115.fab"
+#resource
+	"prefabs/naturepack_075.fab"
+#resource
+	"prefabs/naturepack_079.fab"
+#resource
+	"prefabs/naturepack_163.fab"
+#resource
+	"prefabs/naturepack_120.fab"
+#resource
+	"prefabs/naturepack_052.fab"
+#resource
+	"prefabs/naturepack_021.fab"
+#resource
+	"prefabs/naturepack_flat_003.fab"
+#resource
+	"prefabs/naturepack_024.fab"
+#resource
+	"prefabs/naturepack_138.fab"
+#resource
+	"prefabs/naturepack_155.fab"
+#resource
+	"prefabs/naturepack_037.fab"
+#resource
+	"prefabs/naturepack_070.fab"
+#resource
+	"prefabs/naturepack_091.fab"
+#resource
+	"prefabs/naturepack_023.fab"
+#resource
+	"prefabs/naturepack_046.fab"
+#resource
+	"prefabs/naturepack_166.fab"
+#resource
+	"prefabs/naturepack_069.fab"
+#resource
+	"prefabs/naturepack_083.fab"
+#resource
+	"prefabs/naturepack_086.fab"
+#resource
+	"prefabs/naturepack_171.fab"
+#resource
+	"prefabs/naturepack_162.fab"
+#resource
+	"prefabs/naturepack_028.fab"
+#resource
+	"prefabs/naturepack_132.fab"
+#resource
+	"prefabs/naturepack_015.fab"
+#resource
+	"prefabs/naturepack_055.fab"
+#resource
+	"prefabs/naturepack_029.fab"
+#resource
+	"prefabs/naturepack_096.fab"
+#resource
+	"prefabs/naturepack_068.fab"
+#resource
+	"prefabs/naturepack_060.fab"
+#resource
+	"prefabs/naturepack_053.fab"
+#resource
+	"prefabs/naturepack_102.fab"
+#resource
+	"prefabs/naturepack_041.fab"
+#resource
+	"prefabs/naturepack_017.fab"
+#resource
+	"prefabs/naturepack_101.fab"
+#resource
+	"prefabs/naturepack_121.fab"
+#resource
+	"prefabs/naturepack_038.fab"
+#resource
+	"prefabs/naturepack_158.fab"
+#resource
+	"prefabs/naturepack_157.fab"
+#resource
+	"prefabs/naturepack_175.fab"
+#resource
+	"prefabs/naturepack_137.fab"
+#resource
+	"prefabs/naturepack_073.fab"
+#resource
+	"prefabs/naturepack_095.fab"
+#resource
+	"prefabs/naturepack_063.fab"
+#resource
+	"prefabs/naturepack_151.fab"
+#resource
+	"prefabs/naturepack_035.fab"
+#resource
+	"prefabs/naturepack_051.fab"
+#resource
+	"prefabs/naturepack_078.fab"
+#resource
+	"prefabs/naturepack_094.fab"
+#resource
+	"prefabs/naturepack_143.fab"
+#resource
+	"prefabs/naturepack_089.fab"
+#resource
+	"prefabs/naturepack_080.fab"
+#resource
+	"prefabs/naturepack_005.fab"
+#resource
+	"prefabs/naturepack_107.fab"
+#resource
+	"prefabs/naturepack_146.fab"
+#resource
+	""
+#prefab
+	2463791155
+#pos (2.273071, 2.616392, -6.557959)
+	1074887168
+	1076327161
+	3234978508
+#rot (0.000000, 0.000000, 0.000000, 1.000000)
+	0
+	0
+	0
+	1065353216
+#scale 1.000000
+	1065353216
+#prefab
+	0

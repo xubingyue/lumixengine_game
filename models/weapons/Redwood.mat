@@ -1,0 +1,6 @@
+{
+	"shader" : "pipelines/rigid/rigid.shd",
+	"texture" : { "srgb" : true },
+	"texture" : {},
+	"color" : [0.6549020,0.3960780,0.3215690,1]
+}

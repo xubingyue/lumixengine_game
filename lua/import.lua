@@ -1,7 +1,7 @@
-function importDir(src_dir)
+function importDir(src_dir, out_dir)
 	for filename in io.popen([[dir "]] .. src_dir .. [[" /b]]):lines() do 
 		if string.sub(filename,-string.len(".FBX")):upper() ==".FBX" and string.find(filename, "_LOD") == nil then
-			importModel(src_dir .. filename, [[models/environment/]])
+			importModel(src_dir .. filename, out_dir)
 		end
 	end
 end
@@ -31,4 +31,5 @@ function importModel(filename, out_dir)
 	Engine.logInfo(filename .. " imported")
 end
 
-importDir([[source_assets/naturepack/]])
+--importDir([[source_assets/naturepack/]], [[models/environment/]])
+importDir([[source_assets/weaponpack/]], [[models/weapons/]])

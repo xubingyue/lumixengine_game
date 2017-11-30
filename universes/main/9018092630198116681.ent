@@ -1,0 +1,24 @@
+#name
+	""
+#transform (3.393458, 4.425673, -7.985446)  (0.000000, 0.000000, 0.000000, -1.000000)
+	1079586411
+	1083023134
+	3237972166
+	0
+	0
+	0
+	3212836864
+#scale 1.000000
+	1065353216
+#parent
+	11380708186437772578
+#renderable
+	1512583253
+#source
+	"models/weapons/rocketlauncherside.msh"
+#flags
+	0
+#custom_materials
+	0
+#cmp_end
+	0
