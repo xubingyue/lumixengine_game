@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace Lumix
 {
-	public class RendererScene : IScene
+	public unsafe partial class RendererScene : IScene
 	{
 		public static string Type { get { return "renderer"; } }
 

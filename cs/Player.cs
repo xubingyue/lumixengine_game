@@ -55,8 +55,14 @@ public class Player : Lumix.Component
         var scene = Universe.GetScene<PhysicsScene>();
         Vec3 origin = Vec3.Zero;
         Vec3 dir = Vec3.Forward;
-        Entity hit = scene.Raycast(origin, dir, entity);
-        // TODO
+        RaycastHit hit = new RaycastHit();
+        
+        scene.RaycastEx(origin, dir, 100, ref hit, entity);
+
+        if (hit.entity_id != -1)
+        {
+            Engine.logError("hit");
+        }
     }
 
 

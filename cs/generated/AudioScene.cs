@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace Lumix
 {
-	public class AudioScene : IScene
+	public unsafe partial class AudioScene : IScene
 	{
 		public static string Type { get { return "audio"; } }
 

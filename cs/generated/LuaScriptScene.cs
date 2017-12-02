@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace Lumix
 {
-	public class LuaScriptScene : IScene
+	public unsafe partial class LuaScriptScene : IScene
 	{
 		public static string Type { get { return "lua_script"; } }
 

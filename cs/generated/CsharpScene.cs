@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace Lumix
 {
-	public class CsharpScene : IScene
+	public unsafe partial class CsharpScene : IScene
 	{
 		public static string Type { get { return "csharp"; } }
 
