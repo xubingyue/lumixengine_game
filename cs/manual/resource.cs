@@ -15,6 +15,9 @@ public abstract class Resource
     [MethodImplAttribute(MethodImplOptions.InternalCall)]
     public extern static string getPath(IntPtr resource);
 
+    [MethodImplAttribute(MethodImplOptions.InternalCall)]
+    public extern static IntPtr load(IntPtr engine, string path, string type);
+
     public string GetPath()
     {
         return getPath(__Instance);
@@ -24,6 +27,11 @@ public abstract class Resource
 
 public class PrefabResource : Resource
 {
+    public PrefabResource(string path) 
+    {
+        __Instance = load(Engine.instance_, path, GetResourceType());
+    }
+
     public override string GetResourceType() { return "prefab"; }
 }
 
