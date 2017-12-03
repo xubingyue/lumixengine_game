@@ -1,8 +1,11 @@
+using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 
 namespace Lumix
 {
+
 
 
 public class Player : Lumix.Component
@@ -12,10 +15,11 @@ public class Player : Lumix.Component
     public float m_Yaw = 0;
     public float m_Pitch = 0;
     public float m_RotationSpeed = 0.01f;
-    public Entity m_Camera;
+    public Entity m_CameraEntity;
     private PhysicalController m_PhysicalController;
     private Dictionary<uint, bool> m_IsKeyDown = new Dictionary<uint, bool>();
     private float m_Jump = 0;
+    public PrefabResource m_HitParticlePrefab;
 
     public void OnInput(InputEvent v)
     {
@@ -42,7 +46,6 @@ public class Player : Lumix.Component
     {
         m_IsKeyDown[KEYCODE_SPACE] = false;
         m_IsKeyDown['w'] = false;
-        m_IsKeyDown['w'] = false;
         m_IsKeyDown['a'] = false;
         m_IsKeyDown['s'] = false;
         m_IsKeyDown['d'] = false;
@@ -53,15 +56,15 @@ public class Player : Lumix.Component
     private void Shoot()
     {
         var scene = Universe.GetScene<PhysicsScene>();
-        Vec3 origin = Vec3.Zero;
-        Vec3 dir = Vec3.Forward;
+        Vec3 origin = m_CameraEntity.Position;
+        Vec3 dir = -m_CameraEntity.Direction;
         RaycastHit hit = new RaycastHit();
         
         scene.RaycastEx(origin, dir, 100, ref hit, entity);
 
-        if (hit.entity_id != -1)
+        if (hit.EntityID != -1)
         {
-            Engine.logError("hit");
+            Universe.InstantiatePrefab(m_HitParticlePrefab, hit.Position, new Quat(0, 0, 0, 1), 1);
         }
     }
 
@@ -91,7 +94,7 @@ public class Player : Lumix.Component
         }
 
         Quat pitch_quat = new Quat(new Vec3(1, 0, 0), m_Pitch);
-        m_Camera.SetLocalRotation(pitch_quat);
+        m_CameraEntity.SetLocalRotation(pitch_quat);
     }
 }
 

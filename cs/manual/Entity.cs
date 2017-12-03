@@ -434,6 +434,12 @@ namespace Lumix
         }
 
 
+		public Vec3 Direction
+		{
+			get { return Rotation.Rotate(new Vec3(0, 0, 1)); }
+		}
+
+
         public Quat Rotation
         {
             get { return getRotation(instance_, entity_Id_); }

@@ -20,7 +20,11 @@ namespace Lumix
 		protected extern static int entityInput(IntPtr editor, IntPtr universe, string label, int entity);
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		protected extern static IntPtr resourceInput(IntPtr editor, string label, string type, IntPtr resource);
+
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
 		protected extern static void setCSharpProperty(IntPtr editor, IntPtr universe, int entity, Component cmp, string property, string value);
+
         public int componentId_;
         public IntPtr scene_;
         public Entity entity_;
@@ -67,6 +71,7 @@ namespace Lumix
 			{
 				if (!f.IsPublic) continue;
 				if(f.Name == "entity_") continue;
+				if(f.Name == "componentId_") continue;
 				if(f.Name == "scene_") continue;
 				
 				var val = f.GetValue(this);
@@ -115,6 +120,22 @@ namespace Lumix
 					if(new_entity_id != entity_id)
 					{
 						setCSharpProperty(editor, entity.instance_, entity.entity_Id_, this, f.Name, new_entity_id.ToString());
+					}
+				}
+				else if(f.FieldType.BaseType == typeof(Resource))
+				{
+					IntPtr current = val == null ? IntPtr.Zero : ((Resource)val).__Instance;
+					IntPtr new_res = resourceInput(editor, f.Name, "prefab", current);
+					if (new_res != current)
+					{
+						if (new_res == IntPtr.Zero)
+						{
+							setCSharpProperty(editor, entity.instance_, entity.entity_Id_, this, f.Name, "");
+						}
+						else
+						{
+							setCSharpProperty(editor, entity.instance_, entity.entity_Id_, this, f.Name, Resource.getPath(new_res));
+						}
 					}
 				}
 				else
