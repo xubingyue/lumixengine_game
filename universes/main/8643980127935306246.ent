@@ -1,9 +1,9 @@
 #name
 	""
-#transform (-3.154387, 1.443333, -11.883995)  (0.000000, 0.000000, 0.000000, 1.000000)
-	3226067322
-	1069072166
-	3242075352
+#transform (-4.226930, 0.716392, -9.557960)  (0.000000, 0.000000, 0.000000, 1.000000)
+	3230089986
+	1060595064
+	3239636327
 	0
 	0
 	0
@@ -15,9 +15,9 @@
 #renderable
 	1512583253
 #source
-	"models/environment/naturepack_001.msh"
+	"models/environment/naturepack_116.msh"
 #flags
-	0
+	8
 #custom_materials
 	0
 #mesh_rigid_actor
@@ -29,6 +29,6 @@
 #trigger
 	0
 #source
-	"models/environment/naturepack_001.phy"
+	"models/environment/naturepack_116.phy"
 #cmp_end
 	0
