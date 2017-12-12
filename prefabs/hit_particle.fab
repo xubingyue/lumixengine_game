@@ -25,7 +25,7 @@
 #particle_emitter
 	2085777965
 #scene_version
-	8
+	9
 #autoemit
 	1
 #local_space
@@ -38,36 +38,20 @@
 	1056964608
 #initial_life_to 1.000000
 	1065353216
-#initial_size_from 0.010000
-	1008981770
-#initial_size_to 0.020000
-	1017370378
+#initial_size_from 0.100000
+	1036831949
+#initial_size_to 0.100000
+	1036831949
 #spawn_count_from
 	50
 #spawn_count_to
 	50
 #material
 	"particles/test.mat"
-#particle_emitter_linear_movement
-	3269129633
-#scene_version
-	8
-#x_from -0.100000
-	3184315597
-#x_to 0.100000
-	1036831949
-#y_from -0.100000
-	3184315597
-#y_to 0.100000
-	1036831949
-#z_from -0.100000
-	3184315597
-#z_to 0.100000
-	1036831949
 #particle_emitter_alpha
 	1578575532
 #scene_version
-	8
+	9
 #count
 	15
 # 0.000000
@@ -130,5 +114,21 @@
 	1065353216
 # 0.000000
 	0
+#particle_emitter_linear_movement
+	3269129633
+#scene_version
+	9
+#x_from -1.000000
+	3212836864
+#x_to 1.000000
+	1065353216
+#y_from -1.000000
+	3212836864
+#y_to 1.000000
+	1065353216
+#z_from -1.000000
+	3212836864
+#z_to 1.000000
+	1065353216
 #cmp_end
 	0
