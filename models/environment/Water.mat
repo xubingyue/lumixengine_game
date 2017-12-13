@@ -1,6 +1,19 @@
-{
-	"shader" : "pipelines/rigid/rigid.shd",
-	"texture" : { "srgb" : true },
-	"texture" : {},
-	"color" : [0.6745100,0.9137250,0.9372550,1]
-}
+{"render_layer" : "default",
+"layers_count" : 0,
+"shader" : "pipelines/rigid/rigid.shd",
+"backface_culling" : true,
+"texture" : {"source" : ""},
+"texture" : {"source" : ""},
+"custom_flags" : ["nonwalkable"],
+"defines" : ["INSTANCED"],
+"uniforms" : [{"name" : "u_time",
+"time" : 0},
+{"name" : "u_parallaxScale",
+"float_value" : 0.00000000}],
+"metallic" : 0.00000000,
+"roughness" : 1.00000000,
+"alpha_ref" : 0.30000000,
+"color" : [0.67451000,
+0.91372499,
+0.93725500,
+1.00000000]}

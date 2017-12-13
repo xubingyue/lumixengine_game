@@ -63,5 +63,13 @@ namespace Lumix
 			set { setGetRootMotionFromAnimation(scene_, componentId_, value); }
 		}
 
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static void navigate(IntPtr instance, int cmp, Vec3 a0, float a1, float a2);
+
+		public void Navigate(Vec3 a0, float a1, float a2)
+		{
+			navigate(scene_, componentId_, a0, a1, a2);
+		}
+
 	} // class
 } // namespace
