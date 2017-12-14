@@ -17,7 +17,7 @@ end
 
 function renderSSAODDebug(pipeline, env)
 	if SSAO_debug then
-		newView(pipeline, "ssao_debug", env.ctx.main_framebuffer)
+		newView(pipeline, "ssao_debug", "hdr")
 			setPass(pipeline, "MAIN")
 			disableBlending(pipeline)
 			disableDepthWrite(pipeline)
@@ -96,7 +96,7 @@ function postprocess(pipeline, env)
 			drawQuad(pipeline, 0, 0, 1, 1, env.ctx.blur_material)
 			enableDepthWrite(pipeline)		
 			
-		newView(pipeline, "ssao_postprocess", env.ctx.main_framebuffer)
+		newView(pipeline, "ssao_postprocess", "hdr")
 			setPass(pipeline, "MAIN")
 			enableBlending(pipeline, "multiply")
 			disableDepthWrite(pipeline)

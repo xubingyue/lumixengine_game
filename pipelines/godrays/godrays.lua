@@ -12,7 +12,7 @@ end
 
 function postprocess(pipeline, env)
 	if not enabled then return end
-	newView(pipeline, "godrays", env.ctx.main_framebuffer)
+	newView(pipeline, "godrays", "hdr")
 		local godrays_params = {exposure, decay, weight, 0}
 		setActiveGlobalLightUniforms(pipeline)
 		setUniform(pipeline, env.ctx.godrays_params, {godrays_params})

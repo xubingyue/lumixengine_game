@@ -158,9 +158,10 @@ function module.shadowmap(ctx, camera_slot, layer_mask)
 	end
 end
 
+
 function module.particles(ctx, camera_slot)
 	if module.particles_enabled then
-		newView(ctx.pipeline, "particles", ctx.main_framebuffer)
+		newView(ctx.pipeline, "particles", "hdr")
 			setPass(ctx.pipeline, "PARTICLES")
 			disableDepthWrite(ctx.pipeline)
 			applyCamera(ctx.pipeline, camera_slot)

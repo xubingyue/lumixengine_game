@@ -29,7 +29,9 @@ void main()
 		float avg = (rgb0 + rgb1 + rgb2 + rgb3) / 4.0;
 		#ifdef FINAL
 			float prev_lum = texture2D(s_texPrevLum, vec2(0.5, 0.5)).r;
-			gl_FragColor.r = mix(avg, prev_lum, 0.95);
+			float result = mix(avg, prev_lum, 0.95);
+			if (isnan(result)) result = 0;
+			gl_FragColor.r = result;
 		#else
 			gl_FragColor.r = avg;
 		#endif
