@@ -7,6 +7,7 @@ local ALL_RENDER_MASK = DEFAULT_RENDER_MASK + TRANSPARENT_RENDER_MASK + WATER_RE
 local LUA_SCRIPT_TYPE = Engine.getComponentType("lua_script")
 local SHADOWMAP_SIZE = 1024
 
+local exposure = 4
 local screenshot_request = 0
 local particles_enabled = true
 local render_gizmos = true
@@ -199,17 +200,19 @@ function createFramebuffers()
 end
 
 function loadResources(ctx)
+	ctx.screen_space_material = Engine.loadResource(g_engine, "pipelines/screenspace/screenspace.mat", "material")
 	ctx.screen_space_debug_material = Engine.loadResource(g_engine, "pipelines/screenspace/screenspace_debug.mat", "material")
 	ctx.blur_material = Engine.loadResource(g_engine, "pipelines/common/blur.mat", "material")
 	ctx.pbr_material = Engine.loadResource(g_engine, "pipelines/pbr/pbr.mat", "material")
 	ctx.pbr_local_light_material = Engine.loadResource(g_engine, "pipelines/pbr/pbrlocallight.mat", "material")
 	ctx.gamma_mapping_material = Engine.loadResource(g_engine, "pipelines/common/gamma_mapping.mat", "material")
-	ctx.tonemap_material = Engine.loadResource(g_engine, "pipelines/common/tonemap.mat", "material")
-	ctx.extract_luminance_material = Engine.loadResource(g_engine, "pipelines/common/extractluminance.mat", "material")
+	ctx.tonemap_material = Engine.loadResource(g_engine, "pipelines/tonemap/tonemap.mat", "material")
+	ctx.extract_luminance_material = Engine.loadResource(g_engine, "pipelines/tonemap/extractluminance.mat", "material")
 	ctx.selection_outline_material = Engine.loadResource(g_engine, "pipelines/common/selection_outline.mat", "material")
 end
 
 function initUniforms(ctx)
+	ctx.exposure_uniform = createVec4ArrayUniform(this, "u_exposure", 1)
 	ctx.multiplier_uniform = createVec4ArrayUniform(this, "u_multiplier", 1)
 	ctx.texture_uniform = createUniform(this, "u_texture")
 	ctx.gbuffer0_uniform = createUniform(this, "u_gbuffer0")
@@ -365,6 +368,7 @@ function tonemapping()
 		setMaterialDefine(this, tonemap_material, "FIXED_EXPOSURE", SCENE_VIEW ~= nil)
 		setPass(this, "MAIN")
 		clear(this, CLEAR_DEPTH, 0x303030ff)
+		setUniform(this, exposure_uniform, {{exposure, 0, 0, 0}})
 		bindFramebufferTexture(this, "hdr", 0, texture_uniform)
 		bindFramebufferTexture(this, current_lum1, 0, avg_luminance_uniform)
 		drawQuad(this, 0, 0, 1, 1, tonemap_material)

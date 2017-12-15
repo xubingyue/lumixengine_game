@@ -1,4 +1,0 @@
-{"shader" : "pipelines/common/extractluminance.shd",
-"backface_culling" : false,
-"uniforms" : []
-}

@@ -8,6 +8,7 @@ $input v_texcoord0 // in...
 SAMPLER2D(u_texture, 15);
 
 uniform vec4 midgray;
+uniform vec4 u_exposure;
 
 
 // Unchared2 tone mapping (See http://filmicgames.com)
@@ -39,5 +40,5 @@ void main()
 {
 	vec4 color = texture2D(u_texture, v_texcoord0);
 
-	gl_FragColor.rgba = vec4(tonemap(color.rgb), 1.0f);
+	gl_FragColor.rgba = vec4(u_exposure.x * tonemap(color.rgb), 1.0f);
 }

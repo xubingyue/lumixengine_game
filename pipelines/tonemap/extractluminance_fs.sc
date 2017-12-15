@@ -17,10 +17,10 @@ void main()
 	vec3 rgb2 = texture2D(s_texColor, v_texcoord0 + u_offset[2].xy).rgb;
 	vec3 rgb3 = texture2D(s_texColor, v_texcoord0 + u_offset[3].xy).rgb;
 	#ifdef HDR_EXTRACT_LUMINANCE
-		float avg = log(1e-3 + luma(rgb0).r)
-				  + log(1e-3 + luma(rgb1).r)
-				  + log(1e-3 + luma(rgb2).r)
-				  + log(1e-3 + luma(rgb3).r)
+		float avg = log(0.05 + luma(rgb0).r)
+				  + log(0.05 + luma(rgb1).r)
+				  + log(0.05 + luma(rgb2).r)
+				  + log(0.05 + luma(rgb3).r)
 				  ;
 		avg *= 1.0/4.0;
 

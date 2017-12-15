@@ -12,15 +12,13 @@ http://machinesdontcare.wordpress.com/2009/06/25/3d-perlin-noise-sphere-vertex-s
 
 #include "common.sh"
 
-SAMPLER2D(u_hdrBuffer, 15);
-SAMPLER2D(u_avgLuminance, 14);
+SAMPLER2D(u_texture, 15);
 #ifdef DOF
-	SAMPLER2D(u_dofBuffer, 13);
-	SAMPLER2D(u_depthBuffer, 12);
+	SAMPLER2D(u_dofBuffer, 14);
+	SAMPLER2D(u_depthBuffer, 13);
 #endif
 
 uniform vec4 exposure;
-uniform vec4 midgray;
 uniform vec4 focal_distance;
 uniform vec4 focal_range;
 uniform vec4 u_time;
@@ -36,17 +34,6 @@ uniform vec4 dof_near_multiplier;
 #define grainamount u_grainAmount.x
 #define grainsize u_grainSize.x
 
-// Unchared2 tone mapping (See http://filmicgames.com)
-float Uncharted2Tonemap(float x)
-{
-	const float A = 0.15;
-	const float B = 0.50;
-	const float C = 0.10;
-	const float D = 0.20;
-	const float E = 0.02;
-	const float F = 0.30;
-	return ((x * (A * x + C * B) + D * E) / (x * (A * x + B) + D * F)) - E / F;
-}
 
     
 vec4 rnm(in vec2 tc) 
@@ -168,26 +155,16 @@ vec3 dof(vec2 tex_coord, vec3 in_color)
 	#endif
 }
 
-vec3 tonemap(vec3 in_color)
-{
-	float avg_loglum = exp(texture2D(u_avgLuminance, vec2(0.5, 0.5)).r);
-	float lum = luma(in_color).x;
-	float map_middle = (midgray.r / (avg_loglum + 0.001)) * lum;
-	float ld = Uncharted2Tonemap(map_middle) / Uncharted2Tonemap(11.0);
-	return (in_color / max(0.00001, lum)) * ld;
-}
-
 void main()
 {
-	vec3 color = texture2D(u_hdrBuffer, v_texcoord0).xyz;
+	vec3 color = texture2D(u_texture, v_texcoord0).xyz;
 	
 	color = dof(v_texcoord0, color);
-	color *= exposure.x;
-	color = tonemap(color);
+	//color *= exposure.x;
 	color = vignette(v_texcoord0, color);
 	color = filmGrain(v_texcoord0, color);
 	
-	gl_FragColor =  vec4(color, 1.0f);
+	gl_FragColor = vec4(color, 1.0f);
 }
 
 
