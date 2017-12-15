@@ -2,10 +2,12 @@ local DEFAULT_RENDER_MASK = getLayerMask(this, "default")
 local TRANSPARENT_RENDER_MASK = getLayerMask(this, "transparent")
 local WATER_RENDER_MASK = getLayerMask(this, "water")
 local FUR_RENDER_MASK = getLayerMask(this, "fur")
-local ALL_RENDER_MASK = DEFAULT_RENDER_MASK + TRANSPARENT_RENDER_MASK + WATER_RENDER_MASK + FUR_RENDER_MASK
+local NOSHADOWS_RENDER_MASK = getLayerMask(this, "no_shadows")
+local ALL_RENDER_MASK = DEFAULT_RENDER_MASK + TRANSPARENT_RENDER_MASK + WATER_RENDER_MASK + FUR_RENDER_MASK + NOSHADOWS_RENDER_MASK
 local LUA_SCRIPT_TYPE = Engine.getComponentType("lua_script")
 local SHADOWMAP_SIZE = 1024
 
+local screenshot_request = 0
 local particles_enabled = true
 local render_gizmos = true
 local render_shadowmap_debug = false
@@ -245,7 +247,7 @@ end
 init(_ENV)
 
 function rigid(camera_slot)
-	deferred_view = newView(this, "geometry_pass", "g_buffer", DEFAULT_RENDER_MASK)
+	deferred_view = newView(this, "geometry_pass", "g_buffer", DEFAULT_RENDER_MASK + NOSHADOWS_RENDER_MASK)
 		setPass(this, "DEFERRED")
 		applyCamera(this, camera_slot)
 		clear(this, CLEAR_ALL, 0x00000000)
@@ -547,6 +549,13 @@ function shadowmap(ctx, camera_slot, layer_mask)
 	end
 end
 
+function ingameGUI()
+	newView(this, "ingame_gui", "default")
+		setPass(this, "MAIN")
+		clear(this, CLEAR_DEPTH, 0x303030ff)
+		renderIngameGUI(this)
+end
+
 -- called each frame
 function render()
 	local camera_slot = getCameraSlot()
@@ -577,8 +586,6 @@ function render()
 		setPass(this, "MAIN")
 		render2D(this)
 	
-	-- TODO screenshot, ingame gui
-	
 	if SCENE_VIEW then
 		renderEditorIcons(camera_slot)
 		renderGizmo(camera_slot)
@@ -586,6 +593,25 @@ function render()
 		renderSelectionOutline(ctx, camera_slot)
 	end
 
+	if GAME_VIEW or APP then
+		ingameGUI()
+	end
+
+	if screenshot_request > 1 then
+		-- we have to wait for a few frames to propagate changed resolution to ingame gui
+		-- only then we can take a screeshot
+		-- otherwise ingame gui would be constructed in gameview size
+		-- 1st frame - set forceViewport
+		-- 2nd frame - set ImGui's display size (ingame) to forced value
+		-- 3rd frame - construct ingame gui with forced values
+		-- 4th frame - render and save (save is internally two more frames)
+		screenshot_request = screenshot_request - 1
+		GameView.forceViewport(true, 4096, 2160)
+	elseif screenshot_request == 1 then
+		saveRenderbuffer(this, "default", 0, "screenshot.tga")
+		GameView.forceViewport(false, 0, 0)
+		screenshot_request = 0
+	end
 end
 
 -- gui
