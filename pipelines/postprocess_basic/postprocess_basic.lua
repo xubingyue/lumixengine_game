@@ -258,6 +258,7 @@ end
 
 function initPostprocess(pipeline, env)
 	pipeline_env = env
+	env.pipeline = pipeline
 	initBloom(pipeline, env)
 	initPostprocessBasic(pipeline, env)
 end

@@ -365,7 +365,7 @@ function tonemapping()
 	extractLuminance()
 	
 	newView(this, "tonemap", "linear")
-		setMaterialDefine(this, tonemap_material, "FIXED_EXPOSURE", SCENE_VIEW ~= nil)
+		setMaterialDefine(this, tonemap_material, "FIXED_EXPOSURE", APP == nil and GAME_VIEW == nil)
 		setPass(this, "MAIN")
 		clear(this, CLEAR_DEPTH, 0x303030ff)
 		setUniform(this, exposure_uniform, {{exposure, 0, 0, 0}})
