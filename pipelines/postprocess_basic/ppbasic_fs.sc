@@ -15,11 +15,11 @@ http://machinesdontcare.wordpress.com/2009/06/25/3d-perlin-noise-sphere-vertex-s
 SAMPLER2D(u_texture, 15);
 #ifdef DOF
 	SAMPLER2D(u_dofBuffer, 14);
-	SAMPLER2D(u_depthBuffer, 13);
+	SAMPLER2D(u_cocBuffer, 13);
 #endif
 
+
 uniform vec4 exposure;
-uniform vec4 focal_distance;
 uniform vec4 focal_range;
 uniform vec4 u_time;
 uniform vec4 u_textureSize;
@@ -136,30 +136,10 @@ vec3 vignette(vec2 tex_coord, vec3 in_color)
 }
 
 
-vec3 dof(vec2 tex_coord, vec3 in_color)
-{
-	#ifdef DOF
-		float depth = texture2D(u_depthBuffer, tex_coord).x;
-		vec4 linear_depth_v = mul(u_camInvProj, vec4(0, 0, depth, 1));
-		linear_depth_v /= -linear_depth_v.w;
-
-		float depth_dif = abs(linear_depth_v.z - focal_distance.x);	
-		float near_multiplier = linear_depth_v.z < focal_distance.x ? dof_near_multiplier.x : 1;
-		float t = clamp((depth_dif - clear_range.x) / focal_range.x * near_multiplier, 0, 1);
-		
-		t = min(t, max_dof_blur.x);
-		vec3 dof_color = texture2D(u_dofBuffer, tex_coord).xyz;
-		return mix(in_color, dof_color, t);
-	#else
-		return in_color;
-	#endif
-}
-
 void main()
 {
 	vec3 color = texture2D(u_texture, v_texcoord0).xyz;
 	
-	color = dof(v_texcoord0, color);
 	//color *= exposure.x;
 	color = vignette(v_texcoord0, color);
 	color = filmGrain(v_texcoord0, color);
