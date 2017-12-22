@@ -18,42 +18,8 @@
 	1
 #script_name_hash
 	2679471955
-#prop_count
-	5
-#name
-	"m_Yaw"
-#type
-	12
-#value 0.000000
-	0
-#name
-	"m_Pitch"
-#type
-	12
-#value 0.000000
-	0
-#name
-	"m_RotationSpeed"
-#type
-	12
-#value 0.010000
-	1008981770
-#name
-	"m_CameraEntity"
-#type
-	18
-#script_class
-	1
-#entity
-	11380708186437772578
-#name
-	"m_HitParticlePrefab"
-#type
-	18
-#script_class
-	2
-#resource_path
-	"prefabs/hit_particle.fab"
+#properties
+	"0|Single|m_Yaw|0|Single|m_Pitch|0|Single|m_RotationSpeed|0.01|Entity|m_CameraEntity|4|PrefabResource|m_HitParticlePrefab|prefabs/hit_particle.fab|"
 #physical_controller
 	3741564514
 #layer

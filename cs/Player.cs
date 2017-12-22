@@ -42,7 +42,7 @@ public class Player : Lumix.Component
     }
 
 
-    public void OnStartGame()
+    public void Start()
     {
         m_IsKeyDown[KEYCODE_SPACE] = false;
         m_IsKeyDown['w'] = false;

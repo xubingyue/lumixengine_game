@@ -14,14 +14,8 @@
 	1
 #script_name_hash
 	3862853960
-#prop_count
-	1
-#name
-	"time"
-#type
-	12
-#value 1.000000
-	1065353216
+#properties
+	"0|Single|time|1.5|"
 #particle_emitter
 	2085777965
 #scene_version
@@ -48,6 +42,22 @@
 	50
 #material
 	"particles/test.mat"
+#particle_emitter_linear_movement
+	3269129633
+#scene_version
+	9
+#x_from -1.000000
+	3212836864
+#x_to 1.000000
+	1065353216
+#y_from -1.000000
+	3212836864
+#y_to 1.000000
+	1065353216
+#z_from -1.000000
+	3212836864
+#z_to 1.000000
+	1065353216
 #particle_emitter_alpha
 	1578575532
 #scene_version
@@ -114,21 +124,5 @@
 	1065353216
 # 0.000000
 	0
-#particle_emitter_linear_movement
-	3269129633
-#scene_version
-	9
-#x_from -1.000000
-	3212836864
-#x_to 1.000000
-	1065353216
-#y_from -1.000000
-	3212836864
-#y_to 1.000000
-	1065353216
-#z_from -1.000000
-	3212836864
-#z_to 1.000000
-	1065353216
 #cmp_end
 	0

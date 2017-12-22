@@ -30,6 +30,7 @@ namespace Lumix
 		{
 			var type = this.GetType();
 			var string_builder = new System.Text.StringBuilder();
+			string_builder.Append("0|"); // header (version)
 			foreach (var f in type.GetFields())
 			{
 				if (!f.IsPublic) continue;
@@ -67,7 +68,9 @@ namespace Lumix
 		{
 			var this_type = this.GetType();
 			string[] values = data.Split('|');
-			for (int i = 0; i < values.Length - 1; i += 3)
+			int version = int.Parse(values[0]);
+			if (version > 0) return; 
+			for (int i = 1; i < values.Length - 1; i += 3)
 			{
 				string type = values[i];
 				string name = values[i+1];
