@@ -28,7 +28,11 @@ local render_debug_deferred =
 }
 
 function getCameraSlot()
-	if APP then
+	if RENDER_TEST then
+		return "editor"
+	elseif PROBE then
+		return "probe"
+	elseif APP then
 		return "main"
 	elseif GAME_VIEW  then
 		return "main"
@@ -131,7 +135,7 @@ function createFramebuffers()
 		}
 	})
 
-	if not APP then
+	if not APP and not RENDER_TEST then
 		addFramebuffer(this, "default", {
 			width = 1024,
 			height = 1024,
