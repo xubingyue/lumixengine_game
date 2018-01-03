@@ -1,0 +1,34 @@
+#name
+	""
+#transform (14.273073, 0.716393, -6.057959)  (0.000000, 0.707107, 0.000000, 0.707107)
+	1097096834
+	1060595076
+	3233929932
+	0
+	1060439281
+	0
+	1060439284
+#scale 1.000000
+	1065353215
+#parent
+	18446744073709551615
+#renderable
+	1512583253
+#source
+	"models/environment/naturepack_116.msh"
+#flags
+	8
+#custom_materials
+	0
+#mesh_rigid_actor
+	1567933814
+#layer
+	0
+#dynamic_type
+	0
+#trigger
+	0
+#source
+	"models/environment/naturepack_116.phy"
+#cmp_end
+	0
