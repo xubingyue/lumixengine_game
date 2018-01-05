@@ -142,8 +142,17 @@ namespace Lumix
 
         public int componentId_;
         public IntPtr scene_;
-        public Entity entity_;
-		public Entity entity { get { return entity_; } }
+		private Entity entity_;
+		public Entity entity 
+		{ 
+			get { return entity_; }
+			set 
+			{ 
+				if(entity_ != null) throw new Exception("Component's entity can not be reset");
+				entity_ = value;
+				entity_.components_.Add(this);
+			}
+		}
 
         public Universe Universe
         {

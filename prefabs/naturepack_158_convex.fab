@@ -1,0 +1,42 @@
+#version
+	2
+#entity_count
+	1
+#prefab
+	2704647279
+#parent
+	18446744073709551615
+#csharp_script
+	829455905
+#scene_version
+	-1
+#count
+	1
+#script_name_hash
+	3447265989
+#properties
+	"0|"
+#renderable
+	1512583253
+#scene_version
+	9
+#source
+	"models/environment/naturepack_158.msh"
+#flags
+	8
+#custom_materials
+	0
+#mesh_rigid_actor
+	1567933814
+#scene_version
+	4
+#layer
+	0
+#dynamic_type
+	0
+#trigger
+	0
+#source
+	"models/environment/naturepack_158_convex.phy"
+#cmp_end
+	0
