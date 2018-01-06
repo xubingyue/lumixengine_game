@@ -24,5 +24,18 @@ namespace Lumix
 			set { setSource(scene_, componentId_, value); }
 		}
 
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static int getDefaultSet(IntPtr scene, int cmp);
+
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static void setDefaultSet(IntPtr scene, int cmp, int value);
+
+
+		public int DefaultSet
+		{
+			get { return getDefaultSet(scene_, componentId_); }
+			set { setDefaultSet(scene_, componentId_, value); }
+		}
+
 	} // class
 } // namespace

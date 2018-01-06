@@ -24,5 +24,18 @@ namespace Lumix
 			set { set3D(scene_, componentId_, value); }
 		}
 
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static int getSound(IntPtr scene, int cmp);
+
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static void setSound(IntPtr scene, int cmp, int value);
+
+
+		public int Sound
+		{
+			get { return getSound(scene_, componentId_); }
+			set { setSound(scene_, componentId_, value); }
+		}
+
 	} // class
 } // namespace

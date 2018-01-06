@@ -12,6 +12,32 @@ namespace Lumix
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static float getRadius(IntPtr scene, int cmp);
+
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static void setRadius(IntPtr scene, int cmp, float value);
+
+
+		public float Radius
+		{
+			get { return getRadius(scene_, componentId_); }
+			set { setRadius(scene_, componentId_, value); }
+		}
+
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static float getHeight(IntPtr scene, int cmp);
+
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static void setHeight(IntPtr scene, int cmp, float value);
+
+
+		public float Height
+		{
+			get { return getHeight(scene_, componentId_); }
+			set { setHeight(scene_, componentId_, value); }
+		}
+
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
 		extern static int getLayer(IntPtr scene, int cmp);
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]

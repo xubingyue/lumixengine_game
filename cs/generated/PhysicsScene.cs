@@ -26,16 +26,11 @@ namespace Lumix
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern static bool raycastEx(IntPtr instance, Vec3 a0, Vec3 a1, float a2, RaycastHit* a3, int a4);
+		extern static bool raycastEx(IntPtr instance, Vec3 a0, Vec3 a1, float a2, ref RaycastHit a3, int a4);
 
-		public unsafe bool RaycastEx(Vec3 a0, Vec3 a1, float a2, ref RaycastHit a3, Entity a4)
+		public bool RaycastEx(Vec3 a0, Vec3 a1, float a2, ref RaycastHit a3, Entity a4)
 		{
-
-			fixed (RaycastHit* __refParamPtr0 = &a3)
-			{
-				var __arg0 = __refParamPtr0;
-				return raycastEx(instance_, a0, a1, a2, __arg0, a4.entity_Id_);
-			}
+			return raycastEx(instance_, a0, a1, a2, ref a3, a4.entity_Id_);
 		}
 
 	}

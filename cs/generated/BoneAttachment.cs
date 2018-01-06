@@ -37,5 +37,18 @@ namespace Lumix
 			set { setRelativeRotation(scene_, componentId_, value); }
 		}
 
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static int getBone(IntPtr scene, int cmp);
+
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static void setBone(IntPtr scene, int cmp, int value);
+
+
+		public int Bone
+		{
+			get { return getBone(scene_, componentId_); }
+			set { setBone(scene_, componentId_, value); }
+		}
+
 	} // class
 } // namespace

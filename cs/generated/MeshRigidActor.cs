@@ -25,6 +25,19 @@ namespace Lumix
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static int getDynamic(IntPtr scene, int cmp);
+
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static void setDynamic(IntPtr scene, int cmp, int value);
+
+
+		public int Dynamic
+		{
+			get { return getDynamic(scene_, componentId_); }
+			set { setDynamic(scene_, componentId_, value); }
+		}
+
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
 		extern static string getSource(IntPtr scene, int cmp);
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]

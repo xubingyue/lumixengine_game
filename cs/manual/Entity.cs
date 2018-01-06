@@ -175,7 +175,7 @@ namespace Lumix
 			 if(x < 0) return null;
 			  return new Entity(instance_, x);
 			}
-			set { setParent(instance_, entity_Id_, value); }
+			set { setParent(instance_, value == null ? -1 : value.entity_Id_, entity_Id_); }
 		}
 
 		public System.IntPtr LocalTransform

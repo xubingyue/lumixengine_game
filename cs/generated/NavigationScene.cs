@@ -16,5 +16,13 @@ namespace Lumix
 			return _value.instance_;
 		}
 
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static bool load(IntPtr instance, string a0);
+
+		public bool Load(string a0)
+		{
+			return load(instance_, a0);
+		}
+
 	}
 }
