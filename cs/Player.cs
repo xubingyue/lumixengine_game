@@ -14,6 +14,7 @@ namespace Lumix
         public float m_Pitch = 0;
         public float m_RotationSpeed = 0.01f;
         public Entity m_CameraEntity;
+        public Entity m_HoldNoticeUI;
         private PhysicalController m_PhysicalController;
         private Dictionary<uint, bool> m_IsKeyDown = new Dictionary<uint, bool>();
         private Dictionary<uint, bool> m_IsKeyPressed = new Dictionary<uint, bool>();
@@ -27,7 +28,7 @@ namespace Lumix
             {
                 var k = v as KeyboardInputEvent;
                 m_IsKeyDown[k.key_id] = k.is_down;
-                m_IsKeyPressed[k.key_id] = true;
+                if (k.is_down) m_IsKeyPressed[k.key_id] = true;
             }
             else if(v is MouseAxisInputEvent)
             {
@@ -84,6 +85,8 @@ namespace Lumix
             m_HoldingEntity.Parent = null;
             var physics = m_HoldingEntity.GetComponent<MeshRigidActor>();
             physics.Dynamic = 1; // dynamic
+            physics.Layer = 0;
+            m_HoldingEntity = null;
         }
 
 
@@ -93,6 +96,7 @@ namespace Lumix
 
             var physics = e.GetComponent<MeshRigidActor>();
             physics.Dynamic = 2; // kinematic
+            physics.Layer = 2;
             e.Parent = m_CameraEntity;
             e.SetLocalPosition(new Vec3(-0.5f, 0, -2));
             e.SetLocalRotation(Quat.Identity);
@@ -103,12 +107,13 @@ namespace Lumix
 
         private void DetectInteractable()
         {
+            bool can_interact = false;
             var scene = Universe.GetScene<PhysicsScene>();
             Vec3 origin = m_CameraEntity.Position;
             Vec3 dir = -m_CameraEntity.Direction;
             RaycastHit hit = new RaycastHit();
         
-            scene.RaycastEx(origin, dir, 100, ref hit, entity);
+            scene.RaycastEx(origin, dir, 1.5f, ref hit, entity);
 
             if (hit.EntityID != -1)
             {
@@ -116,12 +121,14 @@ namespace Lumix
                 Holdable holdable = e.GetComponent<Holdable>();
                 if(holdable != null)
                 {
+                    can_interact = true;
                     if(m_IsKeyPressed.ContainsKey('e'))
                     {
                         Hold(e);
                     }
                 }
             }
+            m_HoldNoticeUI.GetComponent<GuiRect>().IsEnabled = can_interact;
         }
 
 
