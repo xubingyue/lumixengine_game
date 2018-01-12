@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "point_light")]
 	public class PointLight : Component
 	{
-		public PointLight(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "point_light" )) { }
+		public PointLight(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "point_light" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public Vec3 DiffuseColor
 		{
-			get { return getDiffuseColor(scene_, componentId_); }
-			set { setDiffuseColor(scene_, componentId_, value); }
+			get { return getDiffuseColor(scene_, entity_.entity_Id_); }
+			set { setDiffuseColor(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public Vec3 SpecularColor
 		{
-			get { return getSpecularColor(scene_, componentId_); }
-			set { setSpecularColor(scene_, componentId_, value); }
+			get { return getSpecularColor(scene_, entity_.entity_Id_); }
+			set { setSpecularColor(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -46,8 +46,8 @@ namespace Lumix
 
 		public float DiffuseIntensity
 		{
-			get { return getDiffuseIntensity(scene_, componentId_); }
-			set { setDiffuseIntensity(scene_, componentId_, value); }
+			get { return getDiffuseIntensity(scene_, entity_.entity_Id_); }
+			set { setDiffuseIntensity(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -59,8 +59,8 @@ namespace Lumix
 
 		public float SpecularIntensity
 		{
-			get { return getSpecularIntensity(scene_, componentId_); }
-			set { setSpecularIntensity(scene_, componentId_, value); }
+			get { return getSpecularIntensity(scene_, entity_.entity_Id_); }
+			set { setSpecularIntensity(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -72,8 +72,8 @@ namespace Lumix
 
 		public float FOV
 		{
-			get { return getFOV(scene_, componentId_); }
-			set { setFOV(scene_, componentId_, value); }
+			get { return getFOV(scene_, entity_.entity_Id_); }
+			set { setFOV(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -85,8 +85,8 @@ namespace Lumix
 
 		public float Attenuation
 		{
-			get { return getAttenuation(scene_, componentId_); }
-			set { setAttenuation(scene_, componentId_, value); }
+			get { return getAttenuation(scene_, entity_.entity_Id_); }
+			set { setAttenuation(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -98,8 +98,8 @@ namespace Lumix
 
 		public float Range
 		{
-			get { return getRange(scene_, componentId_); }
-			set { setRange(scene_, componentId_, value); }
+			get { return getRange(scene_, entity_.entity_Id_); }
+			set { setRange(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -111,8 +111,8 @@ namespace Lumix
 
 		public bool IsCastShadows
 		{
-			get { return getCastShadows(scene_, componentId_); }
-			set { setCastShadows(scene_, componentId_, value); }
+			get { return getCastShadows(scene_, entity_.entity_Id_); }
+			set { setCastShadows(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

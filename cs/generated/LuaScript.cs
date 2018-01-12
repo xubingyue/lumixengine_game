@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "lua_script")]
 	public class LuaScript : Component
 	{
-		public LuaScript(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "lua_script" )) { }
+		public LuaScript(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "lua_script" )) { }
 
 
 	} // class

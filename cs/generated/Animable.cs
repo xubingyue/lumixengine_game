@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "animable")]
 	public class Animable : Component
 	{
-		public Animable(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "animable" )) { }
+		public Animable(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "animable" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public string Animation
 		{
-			get { return getAnimation(scene_, componentId_); }
-			set { setAnimation(scene_, componentId_, value); }
+			get { return getAnimation(scene_, entity_.entity_Id_); }
+			set { setAnimation(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public float StartTime
 		{
-			get { return getStartTime(scene_, componentId_); }
-			set { setStartTime(scene_, componentId_, value); }
+			get { return getStartTime(scene_, entity_.entity_Id_); }
+			set { setStartTime(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -46,8 +46,8 @@ namespace Lumix
 
 		public float TimeScale
 		{
-			get { return getTimeScale(scene_, componentId_); }
-			set { setTimeScale(scene_, componentId_, value); }
+			get { return getTimeScale(scene_, entity_.entity_Id_); }
+			set { setTimeScale(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "renderable")]
 	public class Renderable : Component
 	{
-		public Renderable(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "renderable" )) { }
+		public Renderable(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "renderable" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public bool IsEnabled
 		{
-			get { return getEnabled(scene_, componentId_); }
-			set { setEnabled(scene_, componentId_, value); }
+			get { return getEnabled(scene_, entity_.entity_Id_); }
+			set { setEnabled(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public string Source
 		{
-			get { return getSource(scene_, componentId_); }
-			set { setSource(scene_, componentId_, value); }
+			get { return getSource(scene_, entity_.entity_Id_); }
+			set { setSource(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -46,8 +46,8 @@ namespace Lumix
 
 		public bool IsKeepSkin
 		{
-			get { return getKeepSkin(scene_, componentId_); }
-			set { setKeepSkin(scene_, componentId_, value); }
+			get { return getKeepSkin(scene_, entity_.entity_Id_); }
+			set { setKeepSkin(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

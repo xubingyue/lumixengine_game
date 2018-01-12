@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "box_rigid_actor")]
 	public class BoxRigidActor : Component
 	{
-		public BoxRigidActor(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "box_rigid_actor" )) { }
+		public BoxRigidActor(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "box_rigid_actor" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public int Layer
 		{
-			get { return getLayer(scene_, componentId_); }
-			set { setLayer(scene_, componentId_, value); }
+			get { return getLayer(scene_, entity_.entity_Id_); }
+			set { setLayer(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public int Dynamic
 		{
-			get { return getDynamic(scene_, componentId_); }
-			set { setDynamic(scene_, componentId_, value); }
+			get { return getDynamic(scene_, entity_.entity_Id_); }
+			set { setDynamic(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -46,8 +46,8 @@ namespace Lumix
 
 		public bool IsTrigger
 		{
-			get { return getTrigger(scene_, componentId_); }
-			set { setTrigger(scene_, componentId_, value); }
+			get { return getTrigger(scene_, entity_.entity_Id_); }
+			set { setTrigger(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -59,8 +59,8 @@ namespace Lumix
 
 		public Vec3 Size
 		{
-			get { return getSize(scene_, componentId_); }
-			set { setSize(scene_, componentId_, value); }
+			get { return getSize(scene_, entity_.entity_Id_); }
+			set { setSize(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

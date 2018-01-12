@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "particle_emitter_linear_movement")]
 	public class ParticleEmitterLinearMovement : Component
 	{
-		public ParticleEmitterLinearMovement(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "particle_emitter_linear_movement" )) { }
+		public ParticleEmitterLinearMovement(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "particle_emitter_linear_movement" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public Vec2 X
 		{
-			get { return getX(scene_, componentId_); }
-			set { setX(scene_, componentId_, value); }
+			get { return getX(scene_, entity_.entity_Id_); }
+			set { setX(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public Vec2 Y
 		{
-			get { return getY(scene_, componentId_); }
-			set { setY(scene_, componentId_, value); }
+			get { return getY(scene_, entity_.entity_Id_); }
+			set { setY(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -46,8 +46,8 @@ namespace Lumix
 
 		public Vec2 Z
 		{
-			get { return getZ(scene_, componentId_); }
-			set { setZ(scene_, componentId_, value); }
+			get { return getZ(scene_, entity_.entity_Id_); }
+			set { setZ(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

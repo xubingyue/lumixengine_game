@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "particle_emitter_plane")]
 	public class ParticleEmitterPlane : Component
 	{
-		public ParticleEmitterPlane(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "particle_emitter_plane" )) { }
+		public ParticleEmitterPlane(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "particle_emitter_plane" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public float Bounce
 		{
-			get { return getBounce(scene_, componentId_); }
-			set { setBounce(scene_, componentId_, value); }
+			get { return getBounce(scene_, entity_.entity_Id_); }
+			set { setBounce(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

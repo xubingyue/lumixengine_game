@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "terrain")]
 	public class Terrain : Component
 	{
-		public Terrain(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "terrain" )) { }
+		public Terrain(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "terrain" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public string Material
 		{
-			get { return getMaterial(scene_, componentId_); }
-			set { setMaterial(scene_, componentId_, value); }
+			get { return getMaterial(scene_, entity_.entity_Id_); }
+			set { setMaterial(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public float XZScale
 		{
-			get { return getXZScale(scene_, componentId_); }
-			set { setXZScale(scene_, componentId_, value); }
+			get { return getXZScale(scene_, entity_.entity_Id_); }
+			set { setXZScale(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -46,8 +46,8 @@ namespace Lumix
 
 		public float HeightScale
 		{
-			get { return getHeightScale(scene_, componentId_); }
-			set { setHeightScale(scene_, componentId_, value); }
+			get { return getHeightScale(scene_, entity_.entity_Id_); }
+			set { setHeightScale(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "particle_emitter")]
 	public class ParticleEmitter : Component
 	{
-		public ParticleEmitter(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "particle_emitter" )) { }
+		public ParticleEmitter(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "particle_emitter" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public Vec2 Life
 		{
-			get { return getLife(scene_, componentId_); }
-			set { setLife(scene_, componentId_, value); }
+			get { return getLife(scene_, entity_.entity_Id_); }
+			set { setLife(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public Vec2 InitialSize
 		{
-			get { return getInitialSize(scene_, componentId_); }
-			set { setInitialSize(scene_, componentId_, value); }
+			get { return getInitialSize(scene_, entity_.entity_Id_); }
+			set { setInitialSize(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -46,8 +46,8 @@ namespace Lumix
 
 		public Vec2 SpawnPeriod
 		{
-			get { return getSpawnPeriod(scene_, componentId_); }
-			set { setSpawnPeriod(scene_, componentId_, value); }
+			get { return getSpawnPeriod(scene_, entity_.entity_Id_); }
+			set { setSpawnPeriod(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -59,8 +59,8 @@ namespace Lumix
 
 		public bool IsAutoemit
 		{
-			get { return getAutoemit(scene_, componentId_); }
-			set { setAutoemit(scene_, componentId_, value); }
+			get { return getAutoemit(scene_, entity_.entity_Id_); }
+			set { setAutoemit(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -72,8 +72,8 @@ namespace Lumix
 
 		public bool IsLocalSpace
 		{
-			get { return getLocalSpace(scene_, componentId_); }
-			set { setLocalSpace(scene_, componentId_, value); }
+			get { return getLocalSpace(scene_, entity_.entity_Id_); }
+			set { setLocalSpace(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -85,8 +85,8 @@ namespace Lumix
 
 		public string Material
 		{
-			get { return getMaterial(scene_, componentId_); }
-			set { setMaterial(scene_, componentId_, value); }
+			get { return getMaterial(scene_, entity_.entity_Id_); }
+			set { setMaterial(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -98,8 +98,8 @@ namespace Lumix
 
 		public Int2 SpawnCount
 		{
-			get { return getSpawnCount(scene_, componentId_); }
-			set { setSpawnCount(scene_, componentId_, value); }
+			get { return getSpawnCount(scene_, entity_.entity_Id_); }
+			set { setSpawnCount(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

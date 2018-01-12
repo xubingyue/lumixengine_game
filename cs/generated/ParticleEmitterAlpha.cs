@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "particle_emitter_alpha")]
 	public class ParticleEmitterAlpha : Component
 	{
-		public ParticleEmitterAlpha(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "particle_emitter_alpha" )) { }
+		public ParticleEmitterAlpha(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "particle_emitter_alpha" )) { }
 
 
 	} // class

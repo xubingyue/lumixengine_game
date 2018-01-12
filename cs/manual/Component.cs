@@ -140,9 +140,8 @@ namespace Lumix
 			}
 		}
 
-        public int componentId_;
         public IntPtr scene_;
-		private Entity entity_;
+		protected Entity entity_;
 		public Entity entity 
 		{ 
 			get { return entity_; }
@@ -164,10 +163,9 @@ namespace Lumix
             
         }
 
-        public Component(Entity _entity, int _componentId, IntPtr _scene)
+        public Component(Entity _entity, IntPtr _scene)
         {
             entity_ = _entity;
-            componentId_ = _componentId;
             scene_ = _scene;
         }
 

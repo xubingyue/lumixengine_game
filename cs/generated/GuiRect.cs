@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "gui_rect")]
 	public class GuiRect : Component
 	{
-		public GuiRect(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "gui_rect" )) { }
+		public GuiRect(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "gui_rect" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public bool IsEnabled
 		{
-			get { return getEnabled(scene_, componentId_); }
-			set { setEnabled(scene_, componentId_, value); }
+			get { return getEnabled(scene_, entity_.entity_Id_); }
+			set { setEnabled(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public float TopPoints
 		{
-			get { return getTopPoints(scene_, componentId_); }
-			set { setTopPoints(scene_, componentId_, value); }
+			get { return getTopPoints(scene_, entity_.entity_Id_); }
+			set { setTopPoints(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -46,8 +46,8 @@ namespace Lumix
 
 		public float TopRelative
 		{
-			get { return getTopRelative(scene_, componentId_); }
-			set { setTopRelative(scene_, componentId_, value); }
+			get { return getTopRelative(scene_, entity_.entity_Id_); }
+			set { setTopRelative(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -59,8 +59,8 @@ namespace Lumix
 
 		public float RightPoints
 		{
-			get { return getRightPoints(scene_, componentId_); }
-			set { setRightPoints(scene_, componentId_, value); }
+			get { return getRightPoints(scene_, entity_.entity_Id_); }
+			set { setRightPoints(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -72,8 +72,8 @@ namespace Lumix
 
 		public float RightRelative
 		{
-			get { return getRightRelative(scene_, componentId_); }
-			set { setRightRelative(scene_, componentId_, value); }
+			get { return getRightRelative(scene_, entity_.entity_Id_); }
+			set { setRightRelative(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -85,8 +85,8 @@ namespace Lumix
 
 		public float BottomPoints
 		{
-			get { return getBottomPoints(scene_, componentId_); }
-			set { setBottomPoints(scene_, componentId_, value); }
+			get { return getBottomPoints(scene_, entity_.entity_Id_); }
+			set { setBottomPoints(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -98,8 +98,8 @@ namespace Lumix
 
 		public float BottomRelative
 		{
-			get { return getBottomRelative(scene_, componentId_); }
-			set { setBottomRelative(scene_, componentId_, value); }
+			get { return getBottomRelative(scene_, entity_.entity_Id_); }
+			set { setBottomRelative(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -111,8 +111,8 @@ namespace Lumix
 
 		public float LeftPoints
 		{
-			get { return getLeftPoints(scene_, componentId_); }
-			set { setLeftPoints(scene_, componentId_, value); }
+			get { return getLeftPoints(scene_, entity_.entity_Id_); }
+			set { setLeftPoints(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -124,8 +124,8 @@ namespace Lumix
 
 		public float LeftRelative
 		{
-			get { return getLeftRelative(scene_, componentId_); }
-			set { setLeftRelative(scene_, componentId_, value); }
+			get { return getLeftRelative(scene_, entity_.entity_Id_); }
+			set { setLeftRelative(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

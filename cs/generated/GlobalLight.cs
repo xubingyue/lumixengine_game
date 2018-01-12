@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "global_light")]
 	public class GlobalLight : Component
 	{
-		public GlobalLight(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "global_light" )) { }
+		public GlobalLight(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "global_light" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public Vec3 Color
 		{
-			get { return getColor(scene_, componentId_); }
-			set { setColor(scene_, componentId_, value); }
+			get { return getColor(scene_, entity_.entity_Id_); }
+			set { setColor(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public float Intensity
 		{
-			get { return getIntensity(scene_, componentId_); }
-			set { setIntensity(scene_, componentId_, value); }
+			get { return getIntensity(scene_, entity_.entity_Id_); }
+			set { setIntensity(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -46,8 +46,8 @@ namespace Lumix
 
 		public float IndirectIntensity
 		{
-			get { return getIndirectIntensity(scene_, componentId_); }
-			set { setIndirectIntensity(scene_, componentId_, value); }
+			get { return getIndirectIntensity(scene_, entity_.entity_Id_); }
+			set { setIndirectIntensity(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -59,8 +59,8 @@ namespace Lumix
 
 		public float FogDensity
 		{
-			get { return getFogDensity(scene_, componentId_); }
-			set { setFogDensity(scene_, componentId_, value); }
+			get { return getFogDensity(scene_, entity_.entity_Id_); }
+			set { setFogDensity(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -72,8 +72,8 @@ namespace Lumix
 
 		public float FogBottom
 		{
-			get { return getFogBottom(scene_, componentId_); }
-			set { setFogBottom(scene_, componentId_, value); }
+			get { return getFogBottom(scene_, entity_.entity_Id_); }
+			set { setFogBottom(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -85,8 +85,8 @@ namespace Lumix
 
 		public float FogHeight
 		{
-			get { return getFogHeight(scene_, componentId_); }
-			set { setFogHeight(scene_, componentId_, value); }
+			get { return getFogHeight(scene_, entity_.entity_Id_); }
+			set { setFogHeight(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -98,8 +98,8 @@ namespace Lumix
 
 		public Vec3 FogColor
 		{
-			get { return getFogColor(scene_, componentId_); }
-			set { setFogColor(scene_, componentId_, value); }
+			get { return getFogColor(scene_, entity_.entity_Id_); }
+			set { setFogColor(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -111,8 +111,8 @@ namespace Lumix
 
 		public Vec4 ShadowCascades
 		{
-			get { return getShadowCascades(scene_, componentId_); }
-			set { setShadowCascades(scene_, componentId_, value); }
+			get { return getShadowCascades(scene_, entity_.entity_Id_); }
+			set { setShadowCascades(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

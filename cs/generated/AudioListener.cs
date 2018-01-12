@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "audio_listener")]
 	public class AudioListener : Component
 	{
-		public AudioListener(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "audio_listener" )) { }
+		public AudioListener(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "audio_listener" )) { }
 
 
 	} // class

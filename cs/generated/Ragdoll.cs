@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "ragdoll")]
 	public class Ragdoll : Component
 	{
-		public Ragdoll(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "ragdoll" )) { }
+		public Ragdoll(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "ragdoll" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public int Layer
 		{
-			get { return getLayer(scene_, componentId_); }
-			set { setLayer(scene_, componentId_, value); }
+			get { return getLayer(scene_, entity_.entity_Id_); }
+			set { setLayer(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

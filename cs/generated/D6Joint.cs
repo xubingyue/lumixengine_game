@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "d6_joint")]
 	public class D6Joint : Component
 	{
-		public D6Joint(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "d6_joint" )) { }
+		public D6Joint(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "d6_joint" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public Vec3 AxisPosition
 		{
-			get { return getAxisPosition(scene_, componentId_); }
-			set { setAxisPosition(scene_, componentId_, value); }
+			get { return getAxisPosition(scene_, entity_.entity_Id_); }
+			set { setAxisPosition(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public Vec3 AxisDirection
 		{
-			get { return getAxisDirection(scene_, componentId_); }
-			set { setAxisDirection(scene_, componentId_, value); }
+			get { return getAxisDirection(scene_, entity_.entity_Id_); }
+			set { setAxisDirection(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -46,8 +46,8 @@ namespace Lumix
 
 		public int XMotion
 		{
-			get { return getXMotion(scene_, componentId_); }
-			set { setXMotion(scene_, componentId_, value); }
+			get { return getXMotion(scene_, entity_.entity_Id_); }
+			set { setXMotion(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -59,8 +59,8 @@ namespace Lumix
 
 		public int YMotion
 		{
-			get { return getYMotion(scene_, componentId_); }
-			set { setYMotion(scene_, componentId_, value); }
+			get { return getYMotion(scene_, entity_.entity_Id_); }
+			set { setYMotion(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -72,8 +72,8 @@ namespace Lumix
 
 		public int ZMotion
 		{
-			get { return getZMotion(scene_, componentId_); }
-			set { setZMotion(scene_, componentId_, value); }
+			get { return getZMotion(scene_, entity_.entity_Id_); }
+			set { setZMotion(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -85,8 +85,8 @@ namespace Lumix
 
 		public int Swing1
 		{
-			get { return getSwing1(scene_, componentId_); }
-			set { setSwing1(scene_, componentId_, value); }
+			get { return getSwing1(scene_, entity_.entity_Id_); }
+			set { setSwing1(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -98,8 +98,8 @@ namespace Lumix
 
 		public int Swing2
 		{
-			get { return getSwing2(scene_, componentId_); }
-			set { setSwing2(scene_, componentId_, value); }
+			get { return getSwing2(scene_, entity_.entity_Id_); }
+			set { setSwing2(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -111,8 +111,8 @@ namespace Lumix
 
 		public int Twist
 		{
-			get { return getTwist(scene_, componentId_); }
-			set { setTwist(scene_, componentId_, value); }
+			get { return getTwist(scene_, entity_.entity_Id_); }
+			set { setTwist(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -124,8 +124,8 @@ namespace Lumix
 
 		public float LinearLimit
 		{
-			get { return getLinearLimit(scene_, componentId_); }
-			set { setLinearLimit(scene_, componentId_, value); }
+			get { return getLinearLimit(scene_, entity_.entity_Id_); }
+			set { setLinearLimit(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -137,8 +137,8 @@ namespace Lumix
 
 		public Vec2 SwingLimit
 		{
-			get { return getSwingLimit(scene_, componentId_); }
-			set { setSwingLimit(scene_, componentId_, value); }
+			get { return getSwingLimit(scene_, entity_.entity_Id_); }
+			set { setSwingLimit(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -150,8 +150,8 @@ namespace Lumix
 
 		public Vec2 TwistLimit
 		{
-			get { return getTwistLimit(scene_, componentId_); }
-			set { setTwistLimit(scene_, componentId_, value); }
+			get { return getTwistLimit(scene_, entity_.entity_Id_); }
+			set { setTwistLimit(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -163,8 +163,8 @@ namespace Lumix
 
 		public float Damping
 		{
-			get { return getDamping(scene_, componentId_); }
-			set { setDamping(scene_, componentId_, value); }
+			get { return getDamping(scene_, entity_.entity_Id_); }
+			set { setDamping(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -176,8 +176,8 @@ namespace Lumix
 
 		public float Stiffness
 		{
-			get { return getStiffness(scene_, componentId_); }
-			set { setStiffness(scene_, componentId_, value); }
+			get { return getStiffness(scene_, entity_.entity_Id_); }
+			set { setStiffness(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -189,8 +189,8 @@ namespace Lumix
 
 		public float Restitution
 		{
-			get { return getRestitution(scene_, componentId_); }
-			set { setRestitution(scene_, componentId_, value); }
+			get { return getRestitution(scene_, entity_.entity_Id_); }
+			set { setRestitution(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

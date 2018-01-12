@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "csharp_script")]
 	public class CsharpScript : Component
 	{
-		public CsharpScript(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "csharp_script" )) { }
+		public CsharpScript(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "csharp_script" )) { }
 
 
 	} // class

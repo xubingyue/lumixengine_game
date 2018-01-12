@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "physical_controller")]
 	public class PhysicalController : Component
 	{
-		public PhysicalController(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "physical_controller" )) { }
+		public PhysicalController(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "physical_controller" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public float Radius
 		{
-			get { return getRadius(scene_, componentId_); }
-			set { setRadius(scene_, componentId_, value); }
+			get { return getRadius(scene_, entity_.entity_Id_); }
+			set { setRadius(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public float Height
 		{
-			get { return getHeight(scene_, componentId_); }
-			set { setHeight(scene_, componentId_, value); }
+			get { return getHeight(scene_, entity_.entity_Id_); }
+			set { setHeight(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -46,8 +46,8 @@ namespace Lumix
 
 		public int Layer
 		{
-			get { return getLayer(scene_, componentId_); }
-			set { setLayer(scene_, componentId_, value); }
+			get { return getLayer(scene_, entity_.entity_Id_); }
+			set { setLayer(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -55,7 +55,7 @@ namespace Lumix
 
 		public void MoveController(Vec3 a0)
 		{
-			moveController(scene_, componentId_, a0);
+			moveController(scene_, entity_.entity_Id_, a0);
 		}
 
 	} // class

@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "particle_emitter_subimage")]
 	public class ParticleEmitterSubimage : Component
 	{
-		public ParticleEmitterSubimage(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "particle_emitter_subimage" )) { }
+		public ParticleEmitterSubimage(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "particle_emitter_subimage" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public int Rows
 		{
-			get { return getRows(scene_, componentId_); }
-			set { setRows(scene_, componentId_, value); }
+			get { return getRows(scene_, entity_.entity_Id_); }
+			set { setRows(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public int Columns
 		{
-			get { return getColumns(scene_, componentId_); }
-			set { setColumns(scene_, componentId_, value); }
+			get { return getColumns(scene_, entity_.entity_Id_); }
+			set { setColumns(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

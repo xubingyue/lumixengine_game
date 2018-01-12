@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "decal")]
 	public class Decal : Component
 	{
-		public Decal(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "decal" )) { }
+		public Decal(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "decal" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public string Material
 		{
-			get { return getMaterial(scene_, componentId_); }
-			set { setMaterial(scene_, componentId_, value); }
+			get { return getMaterial(scene_, entity_.entity_Id_); }
+			set { setMaterial(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public Vec3 Scale
 		{
-			get { return getScale(scene_, componentId_); }
-			set { setScale(scene_, componentId_, value); }
+			get { return getScale(scene_, entity_.entity_Id_); }
+			set { setScale(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "ambient_sound")]
 	public class AmbientSound : Component
 	{
-		public AmbientSound(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "ambient_sound" )) { }
+		public AmbientSound(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "ambient_sound" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public bool Is3D
 		{
-			get { return get3D(scene_, componentId_); }
-			set { set3D(scene_, componentId_, value); }
+			get { return get3D(scene_, entity_.entity_Id_); }
+			set { set3D(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public int Sound
 		{
-			get { return getSound(scene_, componentId_); }
-			set { setSound(scene_, componentId_, value); }
+			get { return getSound(scene_, entity_.entity_Id_); }
+			set { setSound(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

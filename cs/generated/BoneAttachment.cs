@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "bone_attachment")]
 	public class BoneAttachment : Component
 	{
-		public BoneAttachment(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "bone_attachment" )) { }
+		public BoneAttachment(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "bone_attachment" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public Vec3 RelativePosition
 		{
-			get { return getRelativePosition(scene_, componentId_); }
-			set { setRelativePosition(scene_, componentId_, value); }
+			get { return getRelativePosition(scene_, entity_.entity_Id_); }
+			set { setRelativePosition(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public Vec3 RelativeRotation
 		{
-			get { return getRelativeRotation(scene_, componentId_); }
-			set { setRelativeRotation(scene_, componentId_, value); }
+			get { return getRelativeRotation(scene_, entity_.entity_Id_); }
+			set { setRelativeRotation(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -46,8 +46,8 @@ namespace Lumix
 
 		public int Bone
 		{
-			get { return getBone(scene_, componentId_); }
-			set { setBone(scene_, componentId_, value); }
+			get { return getBone(scene_, entity_.entity_Id_); }
+			set { setBone(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

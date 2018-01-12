@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "spherical_joint")]
 	public class SphericalJoint : Component
 	{
-		public SphericalJoint(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "spherical_joint" )) { }
+		public SphericalJoint(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "spherical_joint" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public Vec3 AxisPosition
 		{
-			get { return getAxisPosition(scene_, componentId_); }
-			set { setAxisPosition(scene_, componentId_, value); }
+			get { return getAxisPosition(scene_, entity_.entity_Id_); }
+			set { setAxisPosition(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public Vec3 AxisDirection
 		{
-			get { return getAxisDirection(scene_, componentId_); }
-			set { setAxisDirection(scene_, componentId_, value); }
+			get { return getAxisDirection(scene_, entity_.entity_Id_); }
+			set { setAxisDirection(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -46,8 +46,8 @@ namespace Lumix
 
 		public bool IsUseLimit
 		{
-			get { return getUseLimit(scene_, componentId_); }
-			set { setUseLimit(scene_, componentId_, value); }
+			get { return getUseLimit(scene_, entity_.entity_Id_); }
+			set { setUseLimit(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -59,8 +59,8 @@ namespace Lumix
 
 		public Vec2 Limit
 		{
-			get { return getLimit(scene_, componentId_); }
-			set { setLimit(scene_, componentId_, value); }
+			get { return getLimit(scene_, entity_.entity_Id_); }
+			set { setLimit(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

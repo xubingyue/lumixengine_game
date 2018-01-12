@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "mesh_rigid_actor")]
 	public class MeshRigidActor : Component
 	{
-		public MeshRigidActor(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "mesh_rigid_actor" )) { }
+		public MeshRigidActor(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "mesh_rigid_actor" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public int Layer
 		{
-			get { return getLayer(scene_, componentId_); }
-			set { setLayer(scene_, componentId_, value); }
+			get { return getLayer(scene_, entity_.entity_Id_); }
+			set { setLayer(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public int Dynamic
 		{
-			get { return getDynamic(scene_, componentId_); }
-			set { setDynamic(scene_, componentId_, value); }
+			get { return getDynamic(scene_, entity_.entity_Id_); }
+			set { setDynamic(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -46,8 +46,8 @@ namespace Lumix
 
 		public string Source
 		{
-			get { return getSource(scene_, componentId_); }
-			set { setSource(scene_, componentId_, value); }
+			get { return getSource(scene_, entity_.entity_Id_); }
+			set { setSource(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

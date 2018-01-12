@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "anim_controller")]
 	public class AnimController : Component
 	{
-		public AnimController(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "anim_controller" )) { }
+		public AnimController(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "anim_controller" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public string Source
 		{
-			get { return getSource(scene_, componentId_); }
-			set { setSource(scene_, componentId_, value); }
+			get { return getSource(scene_, entity_.entity_Id_); }
+			set { setSource(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public int DefaultSet
 		{
-			get { return getDefaultSet(scene_, componentId_); }
-			set { setDefaultSet(scene_, componentId_, value); }
+			get { return getDefaultSet(scene_, entity_.entity_Id_); }
+			set { setDefaultSet(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "gui_image")]
 	public class GuiImage : Component
 	{
-		public GuiImage(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "gui_image" )) { }
+		public GuiImage(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "gui_image" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,21 @@ namespace Lumix
 
 		public Vec4 Color
 		{
-			get { return getColor(scene_, componentId_); }
-			set { setColor(scene_, componentId_, value); }
+			get { return getColor(scene_, entity_.entity_Id_); }
+			set { setColor(scene_, entity_.entity_Id_, value); }
+		}
+
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static string getSprite(IntPtr scene, int cmp);
+
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static void setSprite(IntPtr scene, int cmp, string value);
+
+
+		public string Sprite
+		{
+			get { return getSprite(scene_, entity_.entity_Id_); }
+			set { setSprite(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

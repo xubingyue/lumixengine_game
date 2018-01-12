@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "particle_emitter_spawn_shape")]
 	public class ParticleEmitterSpawnShape : Component
 	{
-		public ParticleEmitterSpawnShape(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "particle_emitter_spawn_shape" )) { }
+		public ParticleEmitterSpawnShape(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "particle_emitter_spawn_shape" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public float Radius
 		{
-			get { return getRadius(scene_, componentId_); }
-			set { setRadius(scene_, componentId_, value); }
+			get { return getRadius(scene_, entity_.entity_Id_); }
+			set { setRadius(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

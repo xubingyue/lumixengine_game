@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "physical_heightfield")]
 	public class PhysicalHeightfield : Component
 	{
-		public PhysicalHeightfield(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "physical_heightfield" )) { }
+		public PhysicalHeightfield(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "physical_heightfield" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public int Layer
 		{
-			get { return getLayer(scene_, componentId_); }
-			set { setLayer(scene_, componentId_, value); }
+			get { return getLayer(scene_, entity_.entity_Id_); }
+			set { setLayer(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public string Heightmap
 		{
-			get { return getHeightmap(scene_, componentId_); }
-			set { setHeightmap(scene_, componentId_, value); }
+			get { return getHeightmap(scene_, entity_.entity_Id_); }
+			set { setHeightmap(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -46,8 +46,8 @@ namespace Lumix
 
 		public float YScale
 		{
-			get { return getYScale(scene_, componentId_); }
-			set { setYScale(scene_, componentId_, value); }
+			get { return getYScale(scene_, entity_.entity_Id_); }
+			set { setYScale(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -59,8 +59,8 @@ namespace Lumix
 
 		public float XZScale
 		{
-			get { return getXZScale(scene_, componentId_); }
-			set { setXZScale(scene_, componentId_, value); }
+			get { return getXZScale(scene_, entity_.entity_Id_); }
+			set { setXZScale(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

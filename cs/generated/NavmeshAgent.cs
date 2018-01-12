@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "navmesh_agent")]
 	public class NavmeshAgent : Component
 	{
-		public NavmeshAgent(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "navmesh_agent" )) { }
+		public NavmeshAgent(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "navmesh_agent" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public float Radius
 		{
-			get { return getRadius(scene_, componentId_); }
-			set { setRadius(scene_, componentId_, value); }
+			get { return getRadius(scene_, entity_.entity_Id_); }
+			set { setRadius(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public float Height
 		{
-			get { return getHeight(scene_, componentId_); }
-			set { setHeight(scene_, componentId_, value); }
+			get { return getHeight(scene_, entity_.entity_Id_); }
+			set { setHeight(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -46,8 +46,8 @@ namespace Lumix
 
 		public bool IsUseRootMotion
 		{
-			get { return getUseRootMotion(scene_, componentId_); }
-			set { setUseRootMotion(scene_, componentId_, value); }
+			get { return getUseRootMotion(scene_, entity_.entity_Id_); }
+			set { setUseRootMotion(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -59,8 +59,8 @@ namespace Lumix
 
 		public bool IsGetRootMotionFromAnimation
 		{
-			get { return getGetRootMotionFromAnimation(scene_, componentId_); }
-			set { setGetRootMotionFromAnimation(scene_, componentId_, value); }
+			get { return getGetRootMotionFromAnimation(scene_, entity_.entity_Id_); }
+			set { setGetRootMotionFromAnimation(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -68,7 +68,7 @@ namespace Lumix
 
 		public void Navigate(Vec3 a0, float a1, float a2)
 		{
-			navigate(scene_, componentId_, a0, a1, a2);
+			navigate(scene_, entity_.entity_Id_, a0, a1, a2);
 		}
 
 	} // class

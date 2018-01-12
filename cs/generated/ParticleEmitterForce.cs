@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "particle_emitter_force")]
 	public class ParticleEmitterForce : Component
 	{
-		public ParticleEmitterForce(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "particle_emitter_force" )) { }
+		public ParticleEmitterForce(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "particle_emitter_force" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public Vec3 Acceleration
 		{
-			get { return getAcceleration(scene_, componentId_); }
-			set { setAcceleration(scene_, componentId_, value); }
+			get { return getAcceleration(scene_, entity_.entity_Id_); }
+			set { setAcceleration(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

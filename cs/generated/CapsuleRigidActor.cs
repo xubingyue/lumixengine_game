@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "capsule_rigid_actor")]
 	public class CapsuleRigidActor : Component
 	{
-		public CapsuleRigidActor(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "capsule_rigid_actor" )) { }
+		public CapsuleRigidActor(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "capsule_rigid_actor" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public float Radius
 		{
-			get { return getRadius(scene_, componentId_); }
-			set { setRadius(scene_, componentId_, value); }
+			get { return getRadius(scene_, entity_.entity_Id_); }
+			set { setRadius(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public float Height
 		{
-			get { return getHeight(scene_, componentId_); }
-			set { setHeight(scene_, componentId_, value); }
+			get { return getHeight(scene_, entity_.entity_Id_); }
+			set { setHeight(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -46,8 +46,8 @@ namespace Lumix
 
 		public int Dynamic
 		{
-			get { return getDynamic(scene_, componentId_); }
-			set { setDynamic(scene_, componentId_, value); }
+			get { return getDynamic(scene_, entity_.entity_Id_); }
+			set { setDynamic(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -59,8 +59,8 @@ namespace Lumix
 
 		public bool IsTrigger
 		{
-			get { return getTrigger(scene_, componentId_); }
-			set { setTrigger(scene_, componentId_, value); }
+			get { return getTrigger(scene_, entity_.entity_Id_); }
+			set { setTrigger(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class

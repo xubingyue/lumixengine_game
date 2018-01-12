@@ -7,8 +7,8 @@ namespace Lumix
 	[NativeComponent(Type = "echo_zone")]
 	public class EchoZone : Component
 	{
-		public EchoZone(Entity _entity, int _cmpId)
-			: base(_entity, _cmpId, getScene(_entity.instance_, "echo_zone" )) { }
+		public EchoZone(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "echo_zone" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -20,8 +20,8 @@ namespace Lumix
 
 		public float Radius
 		{
-			get { return getRadius(scene_, componentId_); }
-			set { setRadius(scene_, componentId_, value); }
+			get { return getRadius(scene_, entity_.entity_Id_); }
+			set { setRadius(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -33,8 +33,8 @@ namespace Lumix
 
 		public float Delay
 		{
-			get { return getDelay(scene_, componentId_); }
-			set { setDelay(scene_, componentId_, value); }
+			get { return getDelay(scene_, entity_.entity_Id_); }
+			set { setDelay(scene_, entity_.entity_Id_, value); }
 		}
 
 	} // class
