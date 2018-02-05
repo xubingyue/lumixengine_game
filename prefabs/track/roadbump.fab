@@ -1,0 +1,32 @@
+#version
+	2
+#entity_count
+	1
+#prefab
+	3885916958
+#parent
+	18446744073709551615
+#renderable
+	1512583253
+#scene_version
+	10
+#source
+	"models/track/roadbump.msh"
+#flags
+	8
+#custom_materials
+	0
+#mesh_rigid_actor
+	1567933814
+#scene_version
+	4
+#layer
+	0
+#dynamic_type
+	0
+#trigger
+	0
+#source
+	"models/track/roadbump.phy"
+#cmp_end
+	0

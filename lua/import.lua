@@ -1,19 +1,28 @@
-function importDir(src_dir, out_dir)
+function importDir(src_dir, out_dir, center_bottom)
 	for filename in io.popen([[dir "]] .. src_dir .. [[" /b]]):lines() do 
 		if string.sub(filename,-string.len(".FBX")):upper() ==".FBX" and string.find(filename, "_LOD") == nil then
-			importModel(src_dir .. filename, out_dir)
+			importModel(src_dir .. filename, out_dir, center_bottom)
 		end
 	end
 end
 
-function importModel(filename, out_dir)
+function importModel(filename, out_dir, center_bottom)
 	Engine.logInfo("Importing model " .. filename .. "...")
 	ImportAsset.clearSources()
 	ImportAsset.addSource(filename)
-	ImportAsset.setParams({
-		output_dir = out_dir,
-		scale = 1.0,
-	})
+	
+	if center_bottom then
+		ImportAsset.setParams({
+			output_dir = out_dir,
+			scale = 1.0,
+			origin = "bottom"
+		})
+	else
+		ImportAsset.setParams({
+			output_dir = out_dir,
+			scale = 1.0,
+		})
+	end
 	
 	for i = 0, ImportAsset.getMeshesCount() - 1 do	
 		ImportAsset.setMeshParams(i, {import_physics = true})
@@ -31,5 +40,6 @@ function importModel(filename, out_dir)
 	Engine.logInfo(filename .. " imported")
 end
 
---importDir([[source_assets/naturepack/]], [[models/environment/]])
-importDir([[source_assets/weaponpack/]], [[models/weapons/]])
+--importDir([[source_assets/naturepack/]], [[models/environment/]], false)
+--importDir([[source_assets/weaponpack/]], [[models/weapons/]], false)
+importDir([[source_assets/track/]], [[models/track/]], true)
