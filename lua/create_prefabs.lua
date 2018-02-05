@@ -6,9 +6,9 @@ function createPrefab(filename)
 		mesh_rigid_actor = {Source = [[models/environment/]]..phy_filename} 
 	})
 	
-	Editor.selectEntity(Editor.editor, entity)
-	Editor.savePrefab(Editor.editor, [[prefabs/]]..fab_filename)
-	Editor.destroyEntity(Editor.editor, entity)
+	Editor.selectEntity(entity)
+	Editor.savePrefabAs([[prefabs/]]..fab_filename)
+	Editor.destroyEntity(entity)
 end
 
 for filename in io.popen([[dir "models\environment\" /b]]):lines() do 
