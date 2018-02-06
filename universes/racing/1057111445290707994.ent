@@ -1,0 +1,48 @@
+#name
+	""
+#transform (-2.089486, 0.069670, -13.613531)  (0.000000, 0.000000, 0.000000, 1.000000)
+	3221600802
+	1032761088
+	3243888902
+	0
+	0
+	0
+	1065353216
+#scale 1.000000
+	1065353216
+#parent
+	5318330395470139808
+#gui_rect
+	41313106
+#flags
+	3
+#top_pts 0.000000
+	0
+#top_rel 0.000000
+	0
+#right_pts 0.000000
+	0
+#right_rel 1.000000
+	1065353216
+#bottom_pts 0.000000
+	0
+#bottom_rel 1.000000
+	1065353216
+#left_pts 0.000000
+	0
+#left_rel 0.000000
+	0
+#gui_text
+	2385245972
+#font
+	"ui/fonts/opensans-bold.ttf"
+#align
+	0
+#color
+	4294967295
+#font_size
+	30
+#text
+	"Speed: "
+#cmp_end
+	0

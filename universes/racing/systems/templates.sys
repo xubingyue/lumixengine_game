@@ -1,13 +1,36 @@
 #count
-	10
+	37
 #resource
 	"prefabs/track/roadstraight.fab"
 #resource
-	"prefabs/track/roadpitstraightlong.fab"
+	"prefabs/track/roadstraightbridgemid.fab"
 #resource
 	"prefabs/track/roadhalfcircle.fab"
 #resource
+	"prefabs/track/roadstraightbridge.fab"
+#resource
+	"prefabs/track/roadcornersmall.fab"
+#resource
+	"prefabs/track/roadpitstraightlong.fab"
+#resource
+	"prefabs/track/roadbump.fab"
+#resource
+	"prefabs/track/roadstraightskew.fab"
+#resource
 	""
+#prefab
+	665925032
+#pos (-59.946617, -0.030330, 0.998110)
+	3262105942
+	3170399877
+	1065321512
+#rot (0.000000, -1.000000, 0.000000, -0.000000)
+	2147483648
+	3212836864
+	0
+	3007036718
+#scale 1.000000
+	1065353216
 #prefab
 	2952752677
 #pos (0.053379, -0.030330, 10.998113)
@@ -27,6 +50,19 @@
 	3240043868
 	3170399877
 	1107688977
+#rot (0.000000, 0.000000, 0.000000, 1.000000)
+	0
+	0
+	0
+	1065353216
+#scale 1.000000
+	1065353216
+#prefab
+	3885916958
+#pos (-29.946621, -0.030330, -24.001888)
+	3253703342
+	3170399877
+	3250586590
 #rot (0.000000, 0.000000, 0.000000, 1.000000)
 	0
 	0

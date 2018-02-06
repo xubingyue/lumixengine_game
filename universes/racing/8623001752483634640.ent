@@ -11,14 +11,14 @@
 #scale 1.000000
 	1065353216
 #parent
-	8623001752483634640
-#renderable
-	1512583253
-#source
-	"models/transport/racecar.msh"
-#flags
-	8
-#custom_materials
-	0
+	13148466235675660264
+#csharp_script
+	829455905
+#count
+	1
+#script_name_hash
+	1332781181
+#properties
+	"0|Entity|ColliderEntity|13|Entity|TimeUI|1|Entity|SpeedUI|22|Entity|Mesh|9|"
 #cmp_end
 	0
