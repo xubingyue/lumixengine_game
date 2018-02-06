@@ -50,5 +50,21 @@ namespace Lumix
 			set { setSource(scene_, entity_.entity_Id_, value); }
 		}
 
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static void applyForceToActor(IntPtr instance, int cmp, Vec3 a0);
+
+		public void ApplyForceToActor(Vec3 a0)
+		{
+			applyForceToActor(scene_, entity_.entity_Id_, a0);
+		}
+
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static Vec3 getActorVelocity(IntPtr instance, int cmp);
+
+		public Vec3 GetActorVelocity()
+		{
+			return getActorVelocity(scene_, entity_.entity_Id_);
+		}
+
 	} // class
 } // namespace

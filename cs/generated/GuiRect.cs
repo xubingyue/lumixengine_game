@@ -25,6 +25,19 @@ namespace Lumix
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static bool getClipContent(IntPtr scene, int cmp);
+
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static void setClipContent(IntPtr scene, int cmp, bool value);
+
+
+		public bool IsClipContent
+		{
+			get { return getClipContent(scene_, entity_.entity_Id_); }
+			set { setClipContent(scene_, entity_.entity_Id_, value); }
+		}
+
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
 		extern static float getTopPoints(IntPtr scene, int cmp);
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]

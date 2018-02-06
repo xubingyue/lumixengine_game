@@ -37,3 +37,4 @@ metadata.bin
 studio.ini
 pipelines/compiled
 .lumix/
+cs/.vs/

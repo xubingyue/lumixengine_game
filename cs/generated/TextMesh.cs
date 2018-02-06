@@ -4,11 +4,11 @@ using System.Runtime.CompilerServices;
 
 namespace Lumix
 {
-	[NativeComponent(Type = "gui_text")]
-	public class GuiText : Component
+	[NativeComponent(Type = "text_mesh")]
+	public class TextMesh : Component
 	{
-		public GuiText(Entity _entity)
-			: base(_entity,  getScene(_entity.instance_, "gui_text" )) { }
+		public TextMesh(Entity _entity)
+			: base(_entity,  getScene(_entity.instance_, "text_mesh" )) { }
 
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
@@ -48,19 +48,6 @@ namespace Lumix
 		{
 			get { return getFontSize(scene_, entity_.entity_Id_); }
 			set { setFontSize(scene_, entity_.entity_Id_, value); }
-		}
-
-		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern static int getHorizontalAlign(IntPtr scene, int cmp);
-
-		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern static void setHorizontalAlign(IntPtr scene, int cmp, int value);
-
-
-		public int HorizontalAlign
-		{
-			get { return getHorizontalAlign(scene_, entity_.entity_Id_); }
-			set { setHorizontalAlign(scene_, entity_.entity_Id_, value); }
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]

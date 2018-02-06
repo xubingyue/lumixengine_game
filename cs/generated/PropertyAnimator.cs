@@ -24,5 +24,18 @@ namespace Lumix
 			set { setAnimation(scene_, entity_.entity_Id_, value); }
 		}
 
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static bool getEnabled(IntPtr scene, int cmp);
+
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static void setEnabled(IntPtr scene, int cmp, bool value);
+
+
+		public bool IsEnabled
+		{
+			get { return getEnabled(scene_, entity_.entity_Id_); }
+			set { setEnabled(scene_, entity_.entity_Id_, value); }
+		}
+
 	} // class
 } // namespace

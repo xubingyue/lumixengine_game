@@ -64,11 +64,11 @@ namespace Lumix
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
-		extern static void navigate(IntPtr instance, int cmp, Vec3 a0, float a1, float a2);
+		extern static bool navigate(IntPtr instance, int cmp, Vec3 a0, float a1, float a2);
 
-		public void Navigate(Vec3 a0, float a1, float a2)
+		public bool Navigate(Vec3 a0, float a1, float a2)
 		{
-			navigate(scene_, entity_.entity_Id_, a0, a1, a2);
+			return navigate(scene_, entity_.entity_Id_, a0, a1, a2);
 		}
 
 	} // class

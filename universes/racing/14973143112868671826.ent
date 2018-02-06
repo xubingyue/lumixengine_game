@@ -1,0 +1,32 @@
+#name
+	""
+#transform (0.364672, 0.400761, -9.789911)  (0.000000, 0.000000, 0.000000, 1.000000)
+	1052423751
+	1053634702
+	3239879546
+	0
+	0
+	0
+	1065353216
+#scale 1.000000
+	1065353216
+#parent
+	13148466235675660264
+#csharp_script
+	829455905
+#count
+	1
+#script_name_hash
+	1332781181
+#properties
+	"0|Entity|ColliderEntity|3|"
+#renderable
+	1512583253
+#source
+	"models/transport/racecar.msh"
+#flags
+	8
+#custom_materials
+	0
+#cmp_end
+	0

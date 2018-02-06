@@ -3,6 +3,7 @@
 	<ItemGroup>
 		<Compile Include="Animal.cs" />
 		<Compile Include="autodestroy.cs" />
+		<Compile Include="Car.cs" />
 		<Compile Include="Holdable.cs" />
 		<Compile Include="main.csproj" />
 		<Compile Include="main.dll" />
@@ -43,9 +44,12 @@
 		<Compile Include="generated\Decal.cs" />
 		<Compile Include="generated\DistanceJoint.cs" />
 		<Compile Include="generated\EchoZone.cs" />
+		<Compile Include="generated\enums.cs" />
 		<Compile Include="generated\EnvironmentProbe.cs" />
 		<Compile Include="generated\GlobalLight.cs" />
+		<Compile Include="generated\GuiButton.cs" />
 		<Compile Include="generated\GuiImage.cs" />
+		<Compile Include="generated\GuiInputField.cs" />
 		<Compile Include="generated\GuiRect.cs" />
 		<Compile Include="generated\GuiScene.cs" />
 		<Compile Include="generated\GuiText.cs" />
@@ -79,6 +83,7 @@
 		<Compile Include="generated\SphereRigidActor.cs" />
 		<Compile Include="generated\SphericalJoint.cs" />
 		<Compile Include="generated\Terrain.cs" />
+		<Compile Include="generated\TextMesh.cs" />
 	</ItemGroup>
 	<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

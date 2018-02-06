@@ -1,0 +1,38 @@
+#count
+	10
+#resource
+	"prefabs/track/roadstraight.fab"
+#resource
+	"prefabs/track/roadpitstraightlong.fab"
+#resource
+	"prefabs/track/roadhalfcircle.fab"
+#resource
+	""
+#prefab
+	2952752677
+#pos (0.053379, -0.030330, 10.998113)
+	1029350400
+	3170399877
+	1093662789
+#rot (0.000000, 0.000000, 0.000000, 1.000000)
+	0
+	0
+	0
+	1065353216
+#scale 1.000000
+	1065353216
+#prefab
+	3244734459
+#pos (-9.946621, -0.030330, 33.498112)
+	3240043868
+	3170399877
+	1107688977
+#rot (0.000000, 0.000000, 0.000000, 1.000000)
+	0
+	0
+	0
+	1065353216
+#scale 1.000000
+	1065353216
+#prefab
+	0
