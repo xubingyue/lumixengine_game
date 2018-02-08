@@ -1,13 +1,13 @@
 #name
 	""
-#transform (-29.946621, -0.030330, -9.001888)  (0.000000, 0.000000, 0.000000, 1.000000)
-	3253703342
-	3170399877
-	3239053244
+#transform (11.487107, -0.030340, -75.384140)  (0.000000, 0.707107, 0.000000, 0.707107)
+	1094175537
+	3170405376
+	3264660654
 	0
+	1060439283
 	0
-	0
-	1065353216
+	1060439284
 #scale 1.000000
 	1065353215
 #parent
@@ -15,7 +15,7 @@
 #renderable
 	1512583253
 #source
-	"models/track/roadstraight.msh"
+	"models/track/grandstandcovered.msh"
 #flags
 	8
 #custom_materials
@@ -29,6 +29,6 @@
 #trigger
 	0
 #source
-	"models/track/roadstraight.phy"
+	"models/track/grandstandcovered.phy"
 #cmp_end
 	0

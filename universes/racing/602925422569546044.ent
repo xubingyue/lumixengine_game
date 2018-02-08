@@ -1,21 +1,21 @@
 #name
 	""
-#transform (0.053380, -0.030330, -19.001886)  (0.000000, 0.000000, 0.000000, 1.000000)
-	1029350656
-	3170399877
-	3247965149
-	0
-	0
+#transform (-49.946598, -0.030330, -39.001892)  (0.000000, 1.000000, 0.000000, 0.000000)
+	3259484497
+	3170399880
+	3256615408
 	0
 	1065353216
+	0
+	859553070
 #scale 1.000000
-	1065353215
+	1065353216
 #parent
 	18446744073709551615
 #renderable
 	1512583253
 #source
-	"models/track/roadstraight.msh"
+	"models/track/roadpitgarage.msh"
 #flags
 	8
 #custom_materials
@@ -29,6 +29,6 @@
 #trigger
 	0
 #source
-	"models/track/roadstraight.phy"
+	"models/track/roadpitgarage.phy"
 #cmp_end
 	0

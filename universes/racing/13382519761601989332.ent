@@ -1,13 +1,13 @@
 #name
 	""
-#transform (-29.946623, -0.030330, 0.998111)  (0.000000, 0.000000, 0.000000, 1.000000)
-	3253703343
-	3170399877
-	1065321520
+#transform (5.678023, -0.030329, -16.135117)  (0.000000, 0.707107, 0.000000, 0.707107)
+	1085649502
+	3170399488
+	3246462136
 	0
+	1060439283
 	0
-	0
-	1065353216
+	1060439283
 #scale 1.000000
 	1065353216
 #parent
@@ -15,7 +15,7 @@
 #renderable
 	1512583253
 #source
-	"models/track/roadcornersmall.msh"
+	"models/track/barrierred.msh"
 #flags
 	8
 #custom_materials
@@ -29,6 +29,6 @@
 #trigger
 	0
 #source
-	"models/track/roadcornersmall.phy"
+	"models/track/barrierred.phy"
 #cmp_end
 	0

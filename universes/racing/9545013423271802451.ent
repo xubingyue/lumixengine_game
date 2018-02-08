@@ -1,0 +1,34 @@
+#name
+	""
+#transform (-0.053200, -0.030330, -89.008881)  (0.000000, 0.000000, 0.000000, 1.000000)
+	3176786048
+	3170399992
+	3266446476
+	0
+	0
+	0
+	1065353216
+#scale 1.000000
+	1065353216
+#parent
+	18446744073709551615
+#renderable
+	1512583253
+#source
+	"models/track/roadbump.msh"
+#flags
+	8
+#custom_materials
+	0
+#mesh_rigid_actor
+	1567933814
+#layer
+	0
+#dynamic_type
+	0
+#trigger
+	0
+#source
+	"models/track/roadbump.phy"
+#cmp_end
+	0
