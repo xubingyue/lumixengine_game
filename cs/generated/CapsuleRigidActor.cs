@@ -72,6 +72,14 @@ namespace Lumix
 		}
 
 		[MethodImplAttribute(MethodImplOptions.InternalCall)]
+		extern static void applyImpulseToActor(IntPtr instance, int cmp, Vec3 a0);
+
+		public void ApplyImpulseToActor(Vec3 a0)
+		{
+			applyImpulseToActor(scene_, entity_.entity_Id_, a0);
+		}
+
+		[MethodImplAttribute(MethodImplOptions.InternalCall)]
 		extern static Vec3 getActorVelocity(IntPtr instance, int cmp);
 
 		public Vec3 GetActorVelocity()
