@@ -4,28 +4,30 @@ using Lumix;
 
 public class Car : Component
 {
-	public Entity ColliderEntity;
+	public Entity FrontRaycastEntity;
+	public Entity BackRaycastEntity;
 	public Entity TimeUI;
 	public Entity SpeedUI;
 	public Entity Mesh;
 	public Entity LeftWheelParticles;
 	public Entity RightWheelParticles;
-	public float Force = 5000;
+	public float Force = 20000;
+	public float Mass = 1500;
+	public float DragConstant = -500;
 
-	SphereRigidActor _Collider;
 	GuiText _TimeText;
 	GuiText _SpeedText;
 	ParticleEmitter _LeftParticlesEmitter;
 	ParticleEmitter _RightParticlesEmitter;
 	Dictionary<uint, bool> _Keys = new Dictionary<uint, bool>();
 	float _Yaw;
-	float _Time = 0;
+	float _Time;
+	Vec3 _Velocity;
 
 	public void Start()
 	{
 		_Time = 0;
 		_Keys.Clear();
-		_Collider = ColliderEntity.GetComponent<SphereRigidActor>();
 		_TimeText = TimeUI.GetComponent<GuiText>();
 		_SpeedText = SpeedUI.GetComponent<GuiText>();
 		_LeftParticlesEmitter = LeftWheelParticles.GetComponent<ParticleEmitter>();
@@ -44,30 +46,46 @@ public class Car : Component
 
 	public void Update(float time_delta)
 	{
-		Vec3 velocity = _Collider.GetActorVelocity();
-
 		// ui
 		_Time += time_delta;
 		_TimeText.Text = string.Format("{0:F2}", _Time);
 
-		_SpeedText.Text = string.Format("{0:F1}", velocity.Length);
+		_SpeedText.Text = string.Format("{0:F1}", _Velocity.Length);
 
 		// car
-		entity.Position = ColliderEntity.Position - new Vec3(0, 0.7f, 0);
-		Vec3 drag = velocity * -8;
-		_Collider.ApplyForceToActor(drag);
-		Vec3 dir = new Vec3(Mathf.Sin(_Yaw), 0, Mathf.Cos(_Yaw));
-		if (velocity.Length > 0.1)
+		entity.Position += _Velocity * time_delta;
+		if(_Velocity.SquaredLength / time_delta > 0.01f)
 		{
-			_Collider.ApplyForceToActor(dir * velocity.Length * 4);
+			Vec3 drag = _Velocity * DragConstant;
+			Vec3 accel = drag / Mass;
+			if ((accel * time_delta).SquaredLength > _Velocity.SquaredLength)
+			{
+				_Velocity = new Vec3(0, 0, 0);
+			}
+			else
+			{
+				_Velocity += accel * time_delta;
+			}
+		}
+		else
+		{
+			_Velocity = new Vec3(0, 0, 0);
 		}
 
-		float roll_angle = getRoll(dir, velocity);
+		Vec3 dir = new Vec3(Mathf.Sin(_Yaw), 0, Mathf.Cos(_Yaw));
+		if (_Velocity.Length > 0.1)
+		{
+			Vec3 dir_vel = dir * _Velocity.Length;
+			float t = Mathf.Min(time_delta *5 , 1);
+			_Velocity = _Velocity * (1 - t) + dir_vel * t;
+		}
+
+		float roll_angle = getRoll(dir, _Velocity);
 		var roll = new Quat(new Vec3(0, 0, 1), roll_angle);
 		Mesh.Rotation = new Quat(new Vec3(0, 1, 0), _Yaw) * roll;
 		Mesh.Position = entity.Position;
 		float camera_yaw = _Yaw;
-		if(velocity.Length > 0.01f) camera_yaw = Mathf.Atan2(velocity.x, velocity.z);
+		if(_Velocity.Length > 0.01f) camera_yaw = Mathf.Atan2(_Velocity.x, _Velocity.z);
 		entity.Rotation = new Quat(new Vec3(0, 1, 0), camera_yaw);
 
 		if (IsKeyDown('d')) _Yaw -= time_delta;
@@ -75,13 +93,14 @@ public class Car : Component
 		if (IsKeyDown('w'))
 		{
 			Vec3 force = new Vec3();
-			force.x = Mathf.Sin(_Yaw) * time_delta * Force;
-			force.z = Mathf.Cos(_Yaw) * time_delta * Force;
-			_Collider.ApplyForceToActor(force);
+			force.x = Mathf.Sin(_Yaw) * Force;
+			force.z = Mathf.Cos(_Yaw) * Force;
+			Vec3 accel = force / Mass;
+			_Velocity += accel * time_delta;
 		}
 
 		// particles
-		if(velocity.Length < 3)
+		if(_Velocity.Length < 3)
 		{
 			_LeftParticlesEmitter.IsAutoemit = false;
 			_RightParticlesEmitter.IsAutoemit = false;
