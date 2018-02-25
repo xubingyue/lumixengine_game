@@ -53,7 +53,11 @@ namespace Lumix
 				
 				if(f.FieldType == typeof(Entity))
 				{
-					if (manager != IntPtr.Zero)
+					if(val == null)
+					{
+						string_builder.Append(-1);
+					}
+					else if (manager != IntPtr.Zero)
 					{
 						ulong guid = getEntityGUIDFromID(manager, ((Entity)val).entity_Id_);
 						string_builder.Append(guid.ToString());
@@ -121,24 +125,27 @@ namespace Lumix
 				string value = values[i+2];
 
 				var field = this_type.GetField(name);
-				Type field_type = field.FieldType;
-				if (field_type.Name != type) continue;
+				if (field != null)
+				{
+					Type field_type = field.FieldType;
+					if (field_type.Name != type) continue;
 
-				if (field_type == typeof(Entity))
-				{
-					int entity_id = int.Parse(value);
-					Entity e = Universe.GetEntity(entity_id);
-					field.SetValue(this, e);
-				}
-				else if(field_type.BaseType == typeof(Resource))
-				{
-					var resource = Activator.CreateInstance(field_type, new object[] { value });
-					field.SetValue(this, resource);
-				}
-				else
-				{
-					var converter = TypeDescriptor.GetConverter(field_type);
-					field.SetValue(this, converter.ConvertFrom(value));
+					if (field_type == typeof(Entity))
+					{
+						int entity_id = int.Parse(value);
+						Entity e = Universe.GetEntity(entity_id);
+						field.SetValue(this, e);
+					}
+					else if (field_type.BaseType == typeof(Resource))
+					{
+						var resource = Activator.CreateInstance(field_type, new object[] { value });
+						field.SetValue(this, resource);
+					}
+					else
+					{
+						var converter = TypeDescriptor.GetConverter(field_type);
+						field.SetValue(this, converter.ConvertFrom(value));
+					}
 				}
 			}
 		}
