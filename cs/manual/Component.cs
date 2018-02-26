@@ -53,18 +53,28 @@ namespace Lumix
 				
 				if(f.FieldType == typeof(Entity))
 				{
-					if(val == null)
+					if (manager != IntPtr.Zero)
 					{
-						string_builder.Append(-1);
-					}
-					else if (manager != IntPtr.Zero)
-					{
-						ulong guid = getEntityGUIDFromID(manager, ((Entity)val).entity_Id_);
-						string_builder.Append(guid.ToString());
+						if (val == null)
+						{
+							string_builder.Append(ulong.MaxValue);
+						}
+						else
+						{
+							ulong guid = getEntityGUIDFromID(manager, ((Entity)val).entity_Id_);
+							string_builder.Append(guid.ToString());
+						}
 					}
 					else
 					{
-						string_builder.Append(((Entity)val).entity_Id_);
+						if (val == null)
+						{
+							string_builder.Append(-1);
+						}
+						else
+						{
+							string_builder.Append(((Entity)val).entity_Id_);
+						}
 					}
 				}
 				else if(f.FieldType.BaseType == typeof(Resource))

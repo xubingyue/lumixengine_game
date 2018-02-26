@@ -47,7 +47,7 @@
 #flags
 	1
 #prop_count
-	15
+	16
 #prop_name
 	"vignette_radius"
 #prop_type
@@ -138,5 +138,11 @@
 	0
 #prop_value
 	"true"
+#prop_name
+	"lut_texture"
+#prop_type
+	3
+#prop_value
+	""
 #cmp_end
 	0
